@@ -7,13 +7,22 @@ I worked together with [Roy Kuijper](https://github.com/RooyyDoe) on the OBA pro
 
 #### Tested features
 
-- Disable images: De overview pagina met alle boeken is niet meer bruikbaar, alle klikbare elementen waren images. Fix: skeleton UI waarmee de plaatjes standaard hoogtes en breedtes hebben. Daarnaast een goeie alt text van het boek en eventueel de titel er los bij tonen.
-- Disable custom fonts: Niets interessants.
-- Turn of color / color blind mode: In Monochromacy kan je de achtergrondkleuren niet meer goed uit elkaar houden in de edit modus van de powerpoint. Een fix hiervoor zou zijn om de naam van de kleur ook in de content te zetten net als de kleuren voor de fonts.
-- No mouse / trackpad: Op de homepagina kan je overal doorheen tappen, alleen geen focus state op de categorieën. Overview page: Kan je doorheen tabben, alleen geen focus states. Detail pagina: Door hele template kun je tabben, de customizations voor je template kan je niet doorheen tabben.
-- Internet throttling: Ik heb Slow 3G getest. In principe duurt alles iets langer met laden. Met name de afbeeldingen. Hierdoor krijgt de gebruiker dus later feedback dat de content is ingeladen. Een fix hiervoor zou zijn om of de afbeeldingen te comprimeren, of tijdelijk tijdens het laden een soort skeleton UI te laten zien, of natuurlijk allebei.
-- No Javascript: Functionaliteiten zoals zoeken (fetchen) werkt niet. Alle containers zijn visible omdat ik met javascript met setAttribute deze toggelde. Fix: doe dit met CSS.
-- No cookies / local storage: Alles werkt prima omdat wij dit niet gebruiken.
+- `Disable images`: De overview pagina met alle boeken is niet meer bruikbaar, alle klikbare elementen waren images. 
+Fix: skeleton UI waarmee de plaatjes standaard hoogtes en breedtes hebben. Daarnaast een goeie alt text van het boek en eventueel de titel er los bij tonen.
+
+Ter verduidelijking uit het artikel [Understanding progressive enchancement](https://alistapart.com/article/understandingprogressiveenhancement/)
+![image](https://user-images.githubusercontent.com/45566396/76616854-43911b80-6525-11ea-9524-85185dade834.png)
+
+Zorg dat de content altijd te zien is (sterke semantische HTML), no matter what. Ga hierna pas extra laagjes zoals css en zo nodig javascript eromheen toevoegen wanneer de gebruiker dit ook op zijn device/browser aan kan. In principe bouw je dus verschillende laagjes voor elk soort type gebruiker met verschillende devices en browsers zodat iedereen de content kan zien omdat dit vaak het belangrijkst is van de website. Wanneer iedereen de content kan zien kan je dus "saus" eroverheen gooien om het mooier en leuker te maken.
+
+- `Disable custom font`: Niets interessants.
+- `Turn of color / color blind mode`: In Monochromacy kan je de achtergrondkleuren niet meer goed uit elkaar houden in de edit modus van de powerpoint op ons OBA prototype.
+Een fix hiervoor zou zijn om de naam van de kleur ook in de content te zetten net als de kleuren voor de fonts. Dit moet ook goed getest worden, zoals de contrasten, ook je website bekijken op verschillende schermen kan helpen.
+- `No mouse / trackpad`: Op de homepagina kan je overal doorheen tappen, alleen geen focus state op de categorieën. Overview page: Kan je doorheen tabben, alleen geen focus states. Detail pagina: Door hele template kun je tabben, de customizations voor je template kan je niet doorheen tabben.
+Fix: Maak elk element met interactie tabbable, zoals `<a>`, `<button>`, `<input>`, `<select>` en ook `<textarea>`. Liever geen slimme tabindexes gebruiken, gebruik de volgorde van de HTML! Goede `:focus` styles zijn ook zeker geen overbodige luxe. Bron: [Slide van les 2: Muis/Trackpad](https://github.com/cmda-minor-web/browser-technologies-1920/blob/master/slides/BT1920%20College%20Les2%20-%20Progressive%20Enhancement.pdf)
+- `Internet throttling`: Ik heb Slow 3G getest. In principe duurt alles iets langer met laden. Met name de afbeeldingen. Hierdoor krijgt de gebruiker dus later feedback dat de content is ingeladen. Een fix hiervoor zou zijn om of de afbeeldingen te comprimeren, of tijdelijk tijdens het laden een soort skeleton UI te laten zien, of natuurlijk allebei.
+- `No Javascript`: Alle hoofdunctionaliteiten zoals zoeken (fetchen) werkt niet. Alle containers zijn visible omdat ik met javascript met setAttribute deze toggelde. Fix: doe dit met CSS.
+- `No cookies / local storage`: Alles werkt prima omdat wij dit niet gebruiken.
 
 ### Device
 
@@ -60,11 +69,18 @@ Over het algemeen:
 Home pagina:
 
 * Elke link je die je hebt bezocht zegt het dat het visited is.
-* Bezocht link figuur knop bijschrift afbeelding buiten figuur.
+
+Voor elk categorie blokje zegt de screen reader dit:
+
+"Bezocht link figuur knop bijschrift afbeelding buiten figuur."
+
+Dit is niet bepaald fijn omdat het elke keer een hele lap tekst is. Zeker omdat dit 9 keer wordt verteld. en zou dus beter anders kunnen voor mensen die een screen reader gebruiken.
 
 Detail pagina:
 
-Voor elk aanpasbaar item:
-* Klikbaar sectie meerdere regels Bewerkbaar jouw naam hier buiten sectie.
+Voor elk aanpasbaar item wordt dit verteld:
+* Klikbaar sectie meerdere regels, Bewerkbaar jouw naam hier buiten sectie.
 
-Het hele template wordt compleet voorgelezen, de instellingen voor het customizen niet.
+IK vind het goed dat er wordt verteld dat deze velden bewerkbaar zijn.
+
+Het hele template wordt compleet voorgelezen, de instellingen voor het customizen niet, dit is wel een probleem.
