@@ -5,7 +5,7 @@ I worked together with [Roy Kuijper](https://github.com/RooyyDoe) on the OBA pro
 [https://github.com/RooyyDoe/project-1-1920](https://github.com/RooyyDoe/project-1-1920)
 * Live link: [https://rooyydoe.github.io/project-1-1920/](https://rooyydoe.github.io/project-1-1920/)
 
-#### Tested features
+#### Features I tested
 
 - `Disable images`: De overview pagina met alle boeken is niet meer bruikbaar, alle klikbare elementen waren images. 
 Fix: skeleton UI waarmee de plaatjes standaard hoogtes en breedtes hebben. Daarnaast een goeie alt text van het boek en eventueel de titel er los bij tonen.
@@ -21,7 +21,10 @@ Een fix hiervoor zou zijn om de naam van de kleur ook in de content te zetten ne
 - `No mouse / trackpad`: Op de homepagina kan je overal doorheen tappen, alleen geen focus state op de categorieën. Overview page: Kan je doorheen tabben, alleen geen focus states. Detail pagina: Door hele template kun je tabben, de customizations voor je template kan je niet doorheen tabben.
 Fix: Maak elk element met interactie tabbable, zoals `<a>`, `<button>`, `<input>`, `<select>` en ook `<textarea>`. Liever geen slimme tabindexes gebruiken, gebruik de volgorde van de HTML! Goede `:focus` styles zijn ook zeker geen overbodige luxe. Bron: [Slide van les 2: Muis/Trackpad](https://github.com/cmda-minor-web/browser-technologies-1920/blob/master/slides/BT1920%20College%20Les2%20-%20Progressive%20Enhancement.pdf)
 - `Internet throttling`: Ik heb Slow 3G getest. In principe duurt alles iets langer met laden. Met name de afbeeldingen. Hierdoor krijgt de gebruiker dus later feedback dat de content is ingeladen. Een fix hiervoor zou zijn om of de afbeeldingen te comprimeren, of tijdelijk tijdens het laden een soort skeleton UI te laten zien, of natuurlijk allebei.
-- `No Javascript`: Alle hoofdunctionaliteiten zoals zoeken (fetchen) werkt niet. Alle containers zijn visible omdat ik met javascript met setAttribute deze toggelde. Fix: doe dit met CSS.
+- `No Javascript`: Alle hoofdunctionaliteiten zoals zoeken (fetchen) werkt niet.
+Fix: Doe dit server side 
+Alle containers zijn visible omdat ik met javascript met setAttribute deze toggelde. 
+Fix: doe dit met CSS.
 - `No cookies / local storage`: Alles werkt prima omdat wij dit niet gebruiken.
 
 ### Device
