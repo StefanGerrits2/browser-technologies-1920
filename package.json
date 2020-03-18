@@ -1,0 +1,31 @@
+{
+    "name": "browser-technologies-1920",
+    "version": "1.0.0",
+    "description": "I worked together with [Roy Kuijper](https://github.com/RooyyDoe) on the OBA project. We made it on his repo.  * Link to the repo:  [https://github.com/RooyyDoe/project-1-1920](https://github.com/RooyyDoe/project-1-1920) * Live link: [https://rooyydoe.github.io/project-1-1920/](https://rooyydoe.github.io/project-1-1920/)",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "dev": "nodemon server.js",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/StefanGerrits2/browser-technologies-1920.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/StefanGerrits2/browser-technologies-1920/issues"
+    },
+    "homepage": "https://github.com/StefanGerrits2/browser-technologies-1920#readme",
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "nodemon": "^2.0.2"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0"
+    }
+}
