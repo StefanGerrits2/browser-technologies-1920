@@ -87,3 +87,25 @@ Voor elk aanpasbaar item wordt dit verteld:
 IK vind het goed dat er wordt verteld dat deze velden bewerkbaar zijn.
 
 Het hele template wordt compleet voorgelezen, de instellingen voor het customizen niet, dit is wel een probleem.
+
+# Opdracht 2 Concept
+
+Enquete voor ouderen die thuishulp nodig hebben omdat ze in quarantaine zitten.
+
+## Flow als je voor het eerst de enquete wilt invullen
+- Start 
+![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
+- Ontvang code voor later gebruik
+![image](https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png)
+- Enquete met paginering - pagina 1
+![image](https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png)
+- Enquete met paginering - pagina 5
+![image](https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png)
+
+## Flow als je verder wil gaan waar je de vorige keer gebleven was
+- Start
+![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
+- Code invullen
+![image](https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png)
+- Ga verder waar u gebleven was
+![image](https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png)
