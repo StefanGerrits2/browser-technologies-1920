@@ -17,5 +17,7 @@ app
 
     // Get routes
     .get('/', (req, res) => res.render('home.hbs'))
+    .get('/getCode', (req, res) => res.render('getCode.hbs'))
+    .get('/questions-1', (req, res) => res.render('questions-1.hbs'))
 
     .listen(port, () => console.log(`Example app listening on port ${port}!`));

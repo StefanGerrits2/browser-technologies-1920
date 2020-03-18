@@ -1,5 +1,18 @@
 {{> header}}
 
-<h2>Hulp bij thuisquarantaine</h2>
+<p>Dit is een enquete die u in kunt vullen als u hulp nodig heeft bij de thuisquarantaine in verband met het coronavirus.</p>
+
+<article>
+    <h1>Start een nieuwe enquete, of ga verder waar u de vorige keer was gebleven.</h1>
+
+    <a href="/getCode">Nieuwe enquete starten</a>
+
+    <form action="/test" method="post">
+        <label for="code">Vul hier uw code in</label>
+        <input id="code" type="text" maxlength="4"> 
+
+        <input type="submit" id="Submit" value="Ga verder met mijn oude enquete"/>
+    </form>
+</article>
 
 {{> footer}}
