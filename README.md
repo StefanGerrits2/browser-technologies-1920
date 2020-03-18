@@ -90,7 +90,12 @@ Het hele template wordt compleet voorgelezen, de instellingen voor het customize
 
 # Opdracht 2 Concept
 
-Enquete voor ouderen die thuishulp nodig hebben omdat ze in quarantaine zitten.
+### Case:
+- Ik wil een enquete kunnen invullen over de minor Web Development, met verschillende antwoord mogelijkheden. Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven.
+
+In het kort:
+
+Een enquete voor ouderen die thuishulp nodig hebben omdat ze in quarantaine zitten, als ze de browser perongeluk afsluiten of later verder willen gaan, kan dit met behulp van de code als localstorage/cookies uit staat, en anders met localstorage/cookies als dit aan staat.
 
 ## Flow als je voor het eerst de enquete wilt invullen
 - Start 
