@@ -1,23 +1,42 @@
 {{> header}}
 
-<p>Dit is een enquete die u in kunt vullen als u hulp nodig heeft bij de thuisquarantaine in verband met het coronavirus.</p>
-
 <article>
     <form action="/questions-2" method="post">
         <fieldset>
             <legend>Algemeen</legend>
-            <label for="age">1. Hoe oud bent u?</label>
-            <input id="age" inputmode="numeric" pattern="[0-9]{9,9}" maxlength="3"><p>jaar</p>
+            <label>
+                1. Hoe oud bent u?
+                <input name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" maxlength="3"><p>jaar</p>
+            </label>
 
-            <label for="age">2. Wat is uw naam?</label>
-            <input id="age" input="text"><input id="age" input="text"><input id="age" input="text">
+            <label>
+                2. Wat is uw naam?
+                <input name="name1" type="text"><input  name="name2" id="age" type="text"><input  name="name3" id="age" type="text">
+            </label>
 
-            <label for="help">3. Waar heeft u hulp bij nodig?</label>
-            <textarea name="help" id="help" cols="30" rows="10"></textarea>
+            <label>
+                3. Waar heeft u hulp bij nodig?
+                <textarea name="reason" cols="30" rows="10"></textarea>
+            </label>
 
-            <input type="submit" id="Submit" value="Volgende"/>     
+            <fieldset>
+                <legend>Heeft u naasten/bekenden die u kunnen helpen?</legend>
+                <label>
+                    Ja 
+                    <input type="radio" value="Ja" name="needhelp">
+                </label>
+                <label>
+                    Nee 
+                    <input type="radio" value="No" name="needhelp">
+                </label>
+
+                <input type="text" name="currentpage" value="questions-1" hidden>
+            </fieldset>
+
+            <input type="submit" id="Submit" value="Volgende"/>    
         </fieldset>
     </form>
+    <a class="back" href="/getCode">Terug</a>
 </article>
 
 {{> footer}}
