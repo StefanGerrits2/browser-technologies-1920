@@ -8,7 +8,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 const generator = require('generate-password');
 
-let user = "";
+let user = '';
 
 const password = generator.generate({
     length: 6,
