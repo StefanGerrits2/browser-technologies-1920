@@ -1,10 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const hbs = require('express-handlebars');
-// var qs = require('querystring');
 const fs = require('file-system');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
+
+const port = process.env.PORT || 3000;
 
 const generator = require('generate-password');
 
@@ -18,7 +21,6 @@ const password = generator.generate({
 console.log(password);
 
 const app = express();
-const port = 3000;
 const publicPath = path.join(__dirname, './public/');
 
 app
