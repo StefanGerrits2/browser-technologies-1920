@@ -6,7 +6,7 @@ input[type="submit"], .back {
     border: none;
     background-color: #0c1e4e;
     color: white;
-    padding: 1em;
+    padding: 16px;
     cursor: pointer;
 }
 

@@ -1,3 +1,79 @@
+# Assignment 2 Concept
+
+Live link: https://sleepy-everglades-16860.herokuapp.com/
+
+### Case:
+- I want to be able to fill in a survey about the minor Web Development, with various answer options. If I do not complete the survey, I want to continue where I left off later.
+
+In short:
+
+A survey for elderly people who need home help because they are in quarantine, if they accidentally close the browser or want to continue later, this can be done using the code if localstorage / cookies is off, otherwise with localstorage / cookies if this is on .
+
+## Flow if you're new to the survey
+- Start 
+![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
+- Receive code for later use
+![image](https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png)
+- Survey with pagination - page 1
+![image](https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png)
+- Survey with pagination - pagina 3
+![image](https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png)
+
+## Flow if you already filled some of it in, and want to keep on going
+- Start
+![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
+- Type in your code
+![image](https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png)
+- Keep on going where you quit last time
+![image](https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png)
+
+### Progressive enhancement
+
+#### Functional and reliable
+
+The bottom basic experience will just be HTML. Because Javascript is disabled, I need to save the input and progress server side! I'm now busy building it and I hope I get it done this weekend. My live link right now is just html and a little bit of server side for the data. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device.
+
+This basic experience also includes pagination, I built this server side so it works in every browser.
+
+#### Usable
+
+To make it more usable I want to add CSS and some simple client side Javascript. For example simple styling (for example colors, fonts and states for buttons and links) and save answers in localstorage for the core feature.
+
+#### Pleasureable
+
+For this state I want to add nice things like animations and transitions between the pagination. In this state Javascript is enabled and probably on a modern browser. This will be the 'wow' state of my survey.
+
+### 3 Things I want feedback on
+
+* My HTML, I have most of my HTML done and I want to know if it's semantic. You can check this in my `views` folder, or inspect element in my live link.
+
+
+* My 3 "layers" I explained above. Are these good enhancements per layer? Any suggestions?
+
+* 
+
+### Feature detection
+
+#### HTML
+
+From
+
+```HTML
+<input name="age" type="number" maxlength="3"><p>jaar</p>
+```
+
+To
+
+```HTML
+<input name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}"><p>jaar</p>
+```
+
+=> [Source](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
+
+Adding more over time...
+
+# Assignment 1 
+
 ## Device & Browser testing - Break my OBA project
 
 I worked together with [Roy Kuijper](https://github.com/RooyyDoe) on the OBA project. We made it on his repo. 
@@ -87,30 +163,3 @@ Voor elk aanpasbaar item wordt dit verteld:
 IK vind het goed dat er wordt verteld dat deze velden bewerkbaar zijn.
 
 Het hele template wordt compleet voorgelezen, de instellingen voor het customizen niet, dit is wel een probleem.
-
-# Opdracht 2 Concept
-
-### Case:
-- Ik wil een enquete kunnen invullen over de minor Web Development, met verschillende antwoord mogelijkheden. Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven.
-
-In het kort:
-
-Een enquete voor ouderen die thuishulp nodig hebben omdat ze in quarantaine zitten, als ze de browser perongeluk afsluiten of later verder willen gaan, kan dit met behulp van de code als localstorage/cookies uit staat, en anders met localstorage/cookies als dit aan staat.
-
-## Flow als je voor het eerst de enquete wilt invullen
-- Start 
-![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
-- Ontvang code voor later gebruik
-![image](https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png)
-- Enquete met paginering - pagina 1
-![image](https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png)
-- Enquete met paginering - pagina 5
-![image](https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png)
-
-## Flow als je verder wil gaan waar je de vorige keer gebleven was
-- Start
-![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
-- Code invullen
-![image](https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png)
-- Ga verder waar u gebleven was
-![image](https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png)
