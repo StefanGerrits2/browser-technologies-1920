@@ -7,9 +7,13 @@
 <article>
     <h1>Welkom!</h1>
     <p>Als u besluit om later verder te werken aan de enquete, onthoud, of schrijf op, de volgende code:</p>
-    <p>00000</p>
+    <p>{{password}}</p>
+    
+    <form action="/questions-1" method="post">
+        <input type="text" name="user" hidden value="{{user}}">
 
-    <a href="/questions-1">Nieuwe enquete starten</a>
+        <input type="submit" id="Submit" value="Nieuwe enquete starten"/>
+    </form>
 </article>
 
 {{> footer}}
