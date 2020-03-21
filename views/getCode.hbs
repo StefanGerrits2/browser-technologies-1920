@@ -1,16 +1,11 @@
-<header id="header">
-    <a href="">
-        Home
-    </a>
-</header>
+{{> header}}
 
 <article>
     <h1>Welkom!</h1>
     <p>Als u besluit om later verder te werken aan de enquete, onthoud, of schrijf op, de volgende code:</p>
-    <p>{{user}}</p>
     
     <form action="/questions-1" method="post">
-        <input type="text" name="user" value="{{user}}" hidden>
+        <input type="text" name="user" value="{{user}}" readonly>
         <input type="text" name="currentpage" value="getCode" hidden>
 
         <input type="submit" id="Submit" value="Nieuwe enquete starten"/>

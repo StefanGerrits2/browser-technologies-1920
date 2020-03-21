@@ -98,14 +98,14 @@ app
     // .get('/existingCode', (req, res) => res.render('/existingCode'))
     .post('/existingCode', urlencodedParser, (req, res) => {
         const user = req.body.user;
-        const path = `answers/${user}.json`
+        const path = `answers/${user}.json`;
 
         if (fs.existsSync(path)) {
             console.log('The path exists.');
 
             const existingData = JSON.parse(fs.readFileSync(path, {
                 encoding: 'utf8'
-            }))
+            }));
 
             console.log(existingData);
 
