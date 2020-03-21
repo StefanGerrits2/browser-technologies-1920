@@ -96,6 +96,26 @@ article {
     height: 90%;
 }
 
+/* FOCUS STATES */
+header a:focus {
+    background-color: white;
+    color: #0c1e4e;
+}
+
+#start-survey-link:focus {
+    color: #0e7c17;
+    background-color: white;
+}
+
+input[type="submit"]:focus, .back:focus {
+    background-color: white;
+    color: #0c1e4e;
+}
+
+input[type="text"]:focus, textarea:focus {
+    background-color: #b6ccff;
+}
+
 footer {
     position: absolute;
     bottom: 0;
