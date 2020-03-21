@@ -7,13 +7,16 @@
 
     <a href="/getCode">Nieuwe enquete starten</a>
 
-    <form action="/test" method="post">
+    <form action="/existingCode" method="post">
         <label>
             Vul hier uw code in
-            <input id="code" type="text" maxlength="4">
+            <input id="code" name="user" type="text" maxlength="6">
         </label> 
 
         <input type="submit" id="Submit" value="Ga verder met mijn oude enquete"/>
+        {{#if invalidCode}}
+        {{> invalidCode}}
+        {{/if}}
     </form>
 </article>
 

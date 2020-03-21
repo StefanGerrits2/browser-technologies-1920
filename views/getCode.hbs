@@ -10,7 +10,8 @@
     <p>{{user}}</p>
     
     <form action="/questions-1" method="post">
-        <input type="text" name="user" hidden value="{{user}}">
+        <input type="text" name="user" value="{{user}}" hidden>
+        <input type="text" name="currentpage" value="getCode" hidden>
 
         <input type="submit" id="Submit" value="Nieuwe enquete starten"/>
     </form>
