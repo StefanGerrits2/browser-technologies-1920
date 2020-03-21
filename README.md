@@ -31,7 +31,7 @@ A survey for elderly people who need home help because they are in quarantine, i
 
 #### Functional and reliable
 
-The bottom basic experience will just be HTML. Because Javascript is disabled, I need to save the input and progress server side! I'm now busy building it and I hope I get it done this weekend. My live link right now is just html and a little bit of server side for the data. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device.
+The bottom basic experience will just be HTML. Because Javascript is disabled, I need to save the input and progress server side! I'm now busy building it and I hope I get it done this weekend. My live link right now is just html, some css and a little bit of server side for the data. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device. When you enter a code that exists, it takes you to the page where you quit last time you filled in the survey.
 
 This basic experience also includes pagination, I built this server side so it works in every browser.
 
@@ -43,14 +43,13 @@ To make it more usable I want to add CSS and some simple client side Javascript.
 
 For this state I want to add nice things like animations and transitions between the pagination. In this state Javascript is enabled and probably on a modern browser. This will be the 'wow' state of my survey.
 
-### 3 Things I want feedback on
+### 3 things I want feedback on
 
 * My HTML, I have most of my HTML done and I want to know if it's semantic. You can check this in my `views` folder, or inspect element in my live link.
 
-
 * My 3 "layers" I explained above. Are these good enhancements per layer? Any suggestions?
 
-* 
+* My focus states I currently made, you can check these by tabbing through every page.
 
 ### Feature detection
 
