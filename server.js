@@ -68,6 +68,7 @@ app
         const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
 
         // Add new data
+        existingData.user = newData.user,
         existingData.currentpage = newData.currentpage,
         existingData.age = newData.age;
         existingData.fullname = newData.fullname;
@@ -140,12 +141,11 @@ app
     // .get('/existingCode', (req, res) => res.render('/existingCode'))
     .post('/existingCode', urlencodedParser, (req, res) => {
         const user = req.body.user;
-        const path = `answers/${user}.json`;
 
-        if (fs.existsSync(path)) {
+        if (fs.existsSync(`answers/${user}.json`)) {
             console.log('The path exists.');
 
-            const existingData = JSON.parse(fs.readFileSync(path, {
+            const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, {
                 encoding: 'utf8'
             }));
 
@@ -154,6 +154,7 @@ app
             console.log(needhelp);
 
             res.render(existingData.currentpage, {
+                user: existingData.user,
                 age: existingData.age,
                 fullname: existingData.fullname,
                 reason: existingData.reason,
