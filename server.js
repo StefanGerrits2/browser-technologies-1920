@@ -108,8 +108,15 @@ app
             }));
 
             console.log(existingData);
+            const needhelp = existingData.needhelp === 'yes' ? true : false;
+            console.log(needhelp);
 
-            res.redirect(existingData.currentpage);
+            res.render(existingData.currentpage, {
+                age: existingData.age,
+                fullname: existingData.fullname,
+                reason: existingData.reason,
+                needhelp,
+            });
         }
         else {
             console.log('does not exist');

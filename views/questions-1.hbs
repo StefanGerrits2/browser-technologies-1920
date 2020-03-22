@@ -6,32 +6,32 @@
             <legend>Algemeen</legend>
             <label>
                 1. Hoe oud bent u?
-                <input name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}"><p class="inline-block year">jaar</p>
+                <input name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" {{#if age}} value="{{age}}" {{/if}}><p class="inline-block year">jaar</p>
             </label>
 
             <label>
                 2. Wat is uw naam?
-                <input name="name1" type="text">
+                <input name="fullname" type="text" {{#if fullname}} value="{{fullname}}" {{/if}}>
             </label>
 
             <label>
                 3. Waar heeft u hulp bij nodig?
-                <textarea name="reason" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan zelf geen boodschappen doen"></textarea>
+                <textarea name="reason" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan zelf geen boodschappen doen">{{#if reason}} {{reason}} {{/if}}</textarea>
             </label>
             
             <labek>
                 4. Heeft u naasten/bekenden die u kunnen helpen?
                 <label>
                     Ja 
-                    <input type="radio" value="Ja" name="needhelp">
+                    <input type="radio" value="yes" name="needhelp" {{#if needhelp }} checked {{/if}}>
                 </label>
                 <label>
                     Nee 
-                    <input type="radio" value="No" name="needhelp">
+                    <input type="radio" value="no" name="needhelp" {{#unless needhelp }} checked {{/unless}}>
                 </label>
             </label>
 
-            <input type="text" name="currentpage" value="questions-2" hidden>
+            <input type="text" name="currentpage" value="questions-1" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
            
             <input type="submit" id="Submit" value="Volgende"/>    
