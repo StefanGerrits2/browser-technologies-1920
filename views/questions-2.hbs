@@ -6,27 +6,40 @@
             <legend>Divers</legend>
             <label>
                 5. Heeft u gezondheidsklachten?
-                <input name="healthissues" type="text">
+                <input name="healthissues" type="text" {{#if healthissues}} value="{{healthissues}}" {{/if}}>
             </label>
 
             <label>
                 6. Vraag 6
-                <input name="question6" type="text">
+                <input name="question6" type="text" {{#if question6}} value="{{question6}}" {{/if}}>
             </label>
 
             <label>
                 7. Vraag 7
-                <textarea name="question7" cols="30" rows="10"></textarea>
+                <textarea name="question7" cols="30" rows="10">{{#if question7}} {{question7}} {{/if}}</textarea>
             </label>
 
-            <input type="text" name="currentpage" value="questions-2" hidden>
-            <input type="text" name="user" value="{{user}}" hidden>
+            <input type="text" name="currentpage" value="questions-3" hidden>
+            <input type="text" name="user" value="{{user}}">
 
             <input type="submit" id="Submit" value="Volgende"/>     
         </fieldset>
     </form>
 
-    <a class="back" href="/questions-1">Terug</a>
+    <form action="/questions-1" method="post">
+            {{!-- HIDDEN INPUTS - general --}}
+            <input type="text" name="currentpage" value="questions-3" hidden>
+            <input type="text" name="user" value="{{user}}">
+
+            {{!-- HIDDEN INPUTS - question 1 --}}
+            <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>
+            <input name="fullname" type="text" hidden {{#if fullname}} value="{{fullname}}" {{/if}}>
+            <input name="reason" hidden {{#if reason}} value="{{reason}}" {{/if}}>
+            <input type="radio" value="yes" name="needhelp" hidden {{#if needhelp }} checked {{/if}}>
+            <input type="radio" value="no" name="needhelp" hidden {{#unless needhelp }} checked {{/unless}}>
+
+            <input type="submit" id="Submit" value="Terug"/>  
+    </form>
 </article>
 
 {{> footer}}

@@ -43,21 +43,48 @@ app
     })
 
     // Page 1
-    .get('/questions-1', (req, res) => res.render('questions-1.hbs'))
     .post('/questions-1', urlencodedParser, (req, res) => {
         const user = req.body.user;
 
         const data = JSON.stringify(req.body, null, 2);
         
-        fs.writeFileSync(`answers/${user}.json`, data);
+        if (fs.existsSync(`answers/${user}.json`)) {
+            //
+        }
+        else {
+            fs.writeFileSync(`answers/${user}.json`, data);
+        }
 
         console.log(data);
 
-        res.render('questions-1.hbs', { user } );
+        // Existing data
+        const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
+
+        const needhelp = existingData.needhelp === 'yes' ? true : false;
+
+        res.render('questions-1.hbs', { 
+            // question 1 page info
+            user: existingData.user,
+            currentpage: existingData.currentpage,
+            age: existingData.age,
+            fullname: existingData.fullname,
+            reason: existingData.reason,
+            needhelp,
+
+            // question 2 page info
+            healthissues: existingData.healthissues,
+            question6: existingData.question6,
+            question7: existingData.question7,
+
+            // question 3 page info
+            street: existingData.street,
+            housenumber: existingData.housenumber,
+            zipcode: existingData.zipcode,
+            questions: existingData.questions,
+        });
     })
 
     // Page 2
-    .get('/questions-2', (req, res) => res.render('questions-2.hbs'))
     .post('/questions-2', urlencodedParser, (req, res) => {
         const user = req.body.user;
 
@@ -66,6 +93,8 @@ app
 
         // Existing data
         const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
+
+        const needhelp = existingData.needhelp === 'yes' ? true : false;
 
         // Add new data
         existingData.user = newData.user,
@@ -81,11 +110,29 @@ app
         // Write file
         fs.writeFileSync(`answers/${user}.json`, allData);
 
-        res.render('questions-2.hbs', { user } );
+        res.render('questions-2.hbs', { 
+            // question 1 page info
+            user: existingData.user,
+            currentpage: existingData.currentpage,
+            age: existingData.age,
+            fullname: existingData.fullname,
+            reason: existingData.reason,
+            needhelp,
+
+            // question 2 page info
+            healthissues: existingData.healthissues,
+            question6: existingData.question6,
+            question7: existingData.question7,
+
+            // question 3 page info
+            street: existingData.street,
+            housenumber: existingData.housenumber,
+            zipcode: existingData.zipcode,
+            questions: existingData.questions,
+        });
     })
 
     // Page 3
-    .get('/questions-3', (req, res) => res.render('questions-3.hbs'))
     .post('/questions-3', urlencodedParser, (req, res) => {
         const user = req.body.user;
 
@@ -95,9 +142,12 @@ app
         // Existing data
         const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
 
+        const needhelp = existingData.needhelp === 'yes' ? true : false;
+
         // Add new data
+        existingData.user = newData.user,
         existingData.currentpage = newData.currentpage,
-        existingData.healhissues = newData.healthissues;
+        existingData.healthissues = newData.healthissues;
         existingData.question6 = newData.question6;
         existingData.question7 = newData.question7;
 
@@ -107,7 +157,26 @@ app
         // Write file
         fs.writeFileSync(`answers/${user}.json`, allData);
 
-        res.render('questions-3.hbs', { user });
+        res.render('questions-3.hbs', { 
+            // question 1 page info
+            user: existingData.user,
+            currentpage: existingData.currentpage,
+            age: existingData.age,
+            fullname: existingData.fullname,
+            reason: existingData.reason,
+            needhelp,
+
+            // question 2 page info
+            healthissues: existingData.healthissues,
+            question6: existingData.question6,
+            question7: existingData.question7,
+
+            // question 3 page info
+            street: existingData.street,
+            housenumber: existingData.housenumber,
+            zipcode: existingData.zipcode,
+            questions: existingData.questions,
+        });
     })
 
     // Finished
@@ -122,6 +191,7 @@ app
         const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
 
         // Add new data
+        existingData.user = newData.user,
         existingData.currentpage = newData.currentpage,
         existingData.street = newData.street;
         existingData.housenumber = newData.housenumber;
@@ -154,11 +224,24 @@ app
             console.log(needhelp);
 
             res.render(existingData.currentpage, {
+                // question 1 page info
                 user: existingData.user,
+                currentpage: existingData.currentpage,
                 age: existingData.age,
                 fullname: existingData.fullname,
                 reason: existingData.reason,
                 needhelp,
+
+                // question 2 page info
+                healthissues: existingData.healthissues,
+                question6: existingData.question6,
+                question7: existingData.question7,
+
+                // question 3 page info
+                street: existingData.street,
+                housenumber: existingData.housenumber,
+                zipcode: existingData.zipcode,
+                questions: existingData.questions,
             });
         }
         else {

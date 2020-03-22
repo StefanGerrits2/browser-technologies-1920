@@ -28,7 +28,7 @@ body {
     padding: 0;
     font-family: Roboto-regular, sans-serif;
     min-height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header h1 {

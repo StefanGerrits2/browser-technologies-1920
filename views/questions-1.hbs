@@ -31,12 +31,18 @@
                 </label>
             </label>
 
-            <input type="text" name="currentpage" value="questions-1" hidden>
-            <input type="text" name="user" value="{{user}}" hidden>
+            <input type="text" name="currentpage" value="questions-2" hidden>
+            <input type="text" name="user" value="{{user}}">
+
+            {{!-- HIDDEN INPUTS - questions 2 --}}
+            <input name="healthissues" type="text" hidden {{#if healthissues}} value="{{healthissues}}" {{/if}}>
+            <input name="question6" type="text" hidden {{#if question6}} value="{{question6}}" {{/if}}>
+            <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
            
             <input type="submit" id="Submit" value="Volgende"/>    
         </fieldset>
     </form>
+    
     <a class="back" href="/getCode">Terug</a>
 </article>
 

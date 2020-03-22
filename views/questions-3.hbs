@@ -6,29 +6,47 @@
             <legend>Demografische informatie</legend>
             <label>
                 8. Wat is uw straat en huisnummer?
-                <input name="street" type="text" placeholder="Typ uw straat">
-                <input name="housenumber" type="text" placeholder="nummer">
+                <input name="street" type="text" placeholder="Typ uw straat" {{#if street}} value="{{street}}" {{/if}}>
+                <input name="housenumber" type="text" placeholder="nummer" {{#if housenumber}} value="{{housenumber}}" {{/if}}>
             </label>
 
             <label>
                 9. Wat is uw postcode?
                 <p class="instruction-text">Voer een 4-cijferige postcode in, bijvoorbeeld: 1234 of 3215</p>
-                <input name="zipcode" type="text" inputmode="numeric" pattern="[0-9]{4}">
+                <input name="zipcode" type="text" inputmode="numeric" pattern="[0-9]{4}" {{#if zipcode}} value="{{zipcode}}" {{/if}}>
             </label>
 
             <label>
                 9. Heeft u nog vragen of opmerkingen?
-                <textarea name="questions" cols="30" rows="10"></textarea>
+                <textarea name="questions" cols="30" rows="10">{{#if question7}} {{questions}} {{/if}}</textarea>
             </label>
 
-            <input type="text" name="currentpage" value="questions-3" hidden>
-            <input type="text" name="user" value="{{user}}" hidden>
+            <input type="text" name="currentpage" value="finished" hidden>
+            <input type="text" name="user" value="{{user}}">
           
             <input type="submit" id="Submit" value="Versturen"/>     
         </fieldset>
     </form>
 
-    <a class="back" href="/questions-2">Terug</a>
+    <form action="/questions-2" method="post">
+        {{!-- HIDDEN INPUTS - general --}}
+        <input type="text" name="currentpage" value="finished" hidden>
+        <input type="text" name="user" value="{{user}}">
+
+        {{!-- HIDDEN INPUTS - questions 1 --}}
+        <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>
+        <input name="fullname" type="text" hidden {{#if fullname}} value="{{fullname}}" {{/if}}>
+        <input name="reason" hidden {{#if reason}} value="{{reason}}" {{/if}}>
+        <input type="radio" value="yes" name="needhelp" hidden {{#if needhelp }} checked {{/if}}>
+        <input type="radio" value="no" name="needhelp" hidden {{#unless needhelp }} checked {{/unless}}>
+
+        {{!-- HIDDEN INPUTS - questions 2 --}}
+        <input name="healthissues" type="text" hidden {{#if healthissues}} value="{{healthissues}}" {{/if}}>
+        <input name="question6" type="text" hidden {{#if question6}} value="{{question6}}" {{/if}}>
+        <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
+        
+        <input type="submit" id="Submit" value="Terug"/>  
+    </form>
 </article>
 
 {{> footer}}
