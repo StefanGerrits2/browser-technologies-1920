@@ -18,7 +18,7 @@
 
             <label>
                 9. Heeft u nog vragen of opmerkingen?
-                <textarea name="questions" cols="30" rows="10">{{#if question7}} {{questions}} {{/if}}</textarea>
+                <textarea name="questions" cols="30" rows="10">{{#if questions}} {{questions}} {{/if}}</textarea>
             </label>
 
             <input type="text" name="currentpage" value="finished" hidden>
@@ -31,7 +31,7 @@
     <form action="/questions-2" method="post">
         {{!-- HIDDEN INPUTS - general --}}
         <input type="text" name="currentpage" value="finished" hidden>
-        <input type="text" name="user" value="{{user}}">
+        <input type="text" name="user" value="{{user}}" hidden>
 
         {{!-- HIDDEN INPUTS - questions 1 --}}
         <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>
@@ -44,7 +44,7 @@
         <input name="healthissues" type="text" hidden {{#if healthissues}} value="{{healthissues}}" {{/if}}>
         <input name="question6" type="text" hidden {{#if question6}} value="{{question6}}" {{/if}}>
         <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
-        
+
         <input type="submit" id="Submit" value="Terug"/>  
     </form>
 </article>

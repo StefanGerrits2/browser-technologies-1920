@@ -29,7 +29,7 @@
     <form action="/questions-1" method="post">
             {{!-- HIDDEN INPUTS - general --}}
             <input type="text" name="currentpage" value="questions-3" hidden>
-            <input type="text" name="user" value="{{user}}">
+            <input type="text" name="user" value="{{user}}" hidden>
 
             {{!-- HIDDEN INPUTS - question 1 --}}
             <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>

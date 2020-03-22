@@ -102,6 +102,19 @@ header a:focus {
     color: #0c1e4e;
 }
 
+.continue-last-survey {
+    margin-top: 16px;
+}
+
+.your-code {
+    background-color: #8f1b1b;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    font-size: 20px;
+    border: none;
+}
+
 #start-survey-link:focus {
     color: #0e7c17;
     background-color: white;
