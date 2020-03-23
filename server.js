@@ -60,6 +60,15 @@ app
         // Existing data
         const existingData = JSON.parse(fs.readFileSync(`answers/${user}.json`, { encoding: 'utf8'}));
 
+        // New data
+        existingData.currentpage = req.body.currentpage;
+
+        // Stringify new data
+        const allData = JSON.stringify(existingData, null, 2);
+
+        // Write file
+        fs.writeFileSync(`answers/${user}.json`, allData);
+
         const needhelp = existingData.needhelp === 'yes' ? true : false;
 
         res.render('questions-1.hbs', { 
