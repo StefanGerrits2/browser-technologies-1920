@@ -153,7 +153,7 @@ header a:focus {
     color: #0c1e4e;
 }
 
-.next:focus, textarea:focus {
+input[type="text"]:focus, textarea:focus {
     background-color: #b6ccff;
 }
 
@@ -188,21 +188,25 @@ footer {
 
 .info-icon {
     height: 22px;
-    cursor: pointer;
 }
 
 .info__container {
     display: none;
+    cursor: pointer;
 }
 
 .help {
     display: inline;
 }
 
-.instruction-text {
+.instruction-text, .help-text {
     color: #666666;
     font-size: 14px;
     margin-top: 3px;
+}
+
+.getCodeForm {
+    margin-top: 10px;
 }
 
 textarea {
