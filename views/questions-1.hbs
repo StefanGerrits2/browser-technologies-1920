@@ -11,7 +11,7 @@
 
             <label>
                 2. Wat is uw naam?
-                <input name="fullname" type="text" {{#if fullname}} value="{{fullname}}" {{/if}}>
+                <input name="fullname" type="text" placeholder="voornaam achternaam" {{#if fullname}} value="{{fullname}}" {{/if}}>
             </label>
 
             <label>
@@ -39,11 +39,11 @@
             <input name="question6" type="text" hidden {{#if question6}} value="{{question6}}" {{/if}}>
             <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
            
-            <input type="submit" id="Submit" value="Volgende"/>    
+            <input class="next next-button" type="submit" id="Submit" value="Volgende"/>    
         </fieldset>
     </form>
     
     <a class="back" href="/getCode">Terug</a>
 </article>
 
-{{> footer}}
+<script src="/js/questions1.js"></script>

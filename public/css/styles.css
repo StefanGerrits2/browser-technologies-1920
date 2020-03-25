@@ -47,22 +47,53 @@ header {
     color: black;
 }
 
-input[type="submit"], .back {
+/* BUTTONS */
+.next, .back {
     border: none;
-    background-color: #0c1e4e;
-    color: white;
     padding: 10px;
     cursor: pointer;
 }
 
-#start-survey-link {
-    background-color: #0e7c17;
-    color: white;
-    padding: 8px;
-    width: 170px;
-    margin-bottom: 15px;
-    display: inline-block;
+.next, 
+.next-button, 
+.back, 
+#start-survey-home, 
+#back-to-home {
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px #00000073;
 }
+
+.next {
+    background-color: #0c1e4e;
+    color: white;
+    margin-top: 10px;
+}
+
+.next-button {
+    position: absolute;
+    right: 15px;
+}
+
+.back {
+    margin-left: 14px;
+    display: inline-block;
+    width: 56px;
+    background-color: #d6d6d6;
+    color: black;
+    font-size: 14px;
+}
+
+
+#back-to-home {
+    display: block;
+    margin-top: 20px;
+    background-color: #0c1e4e;
+    padding: 15px;
+    width: 130px;
+    color: white;
+}
+
+/* */
 
 .inline-block {
     display: inline-block;
@@ -75,10 +106,6 @@ header a:visited {
 legend {
     font-weight: 1000;
     font-family: Roboto-medium, sans-serif;
-}
-
-.back:visited {
-    color: white;
 }
 
 .year {
@@ -96,10 +123,48 @@ article {
     height: 90%;
 }
 
+#start-survey-home {
+    background-color: #0e7c17;
+    color: white;
+    padding: 8px;
+    width: 170px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+#start-survey-home, #start-survey-getcode {
+    box-shadow: 0px 3px 6px #00000073;
+    margin-top: 0;
+}
+
 /* FOCUS STATES */
 header a:focus {
     background-color: white;
     color: #0c1e4e;
+}
+
+#start-survey-home:focus {
+    color: #0e7c17;
+    background-color: white;
+}
+
+.next:focus, .back:focus {
+    background-color: white;
+    color: #0c1e4e;
+}
+
+.next:focus, textarea:focus {
+    background-color: #b6ccff;
+}
+
+/*Input fields */
+input[type="text"], textarea {
+    border-radius: 5px;
+    border: 1px solid #adadad;
+}
+
+input[type="text"] {
+    padding: .3em;
 }
 
 .continue-last-survey {
@@ -109,24 +174,10 @@ header a:focus {
 .your-code {
     background-color: #8f1b1b;
     color: white;
-    padding: 10px;
+    padding: 7px 10px;
     width: 100px;
     font-size: 20px;
     border: none;
-}
-
-#start-survey-link:focus {
-    color: #0e7c17;
-    background-color: white;
-}
-
-input[type="submit"]:focus, .back:focus {
-    background-color: white;
-    color: #0c1e4e;
-}
-
-input[type="text"]:focus, textarea:focus {
-    background-color: #b6ccff;
 }
 
 footer {
@@ -135,13 +186,27 @@ footer {
     background-color:#ececec;
 }
 
+.info-icon {
+    height: 22px;
+    cursor: pointer;
+}
+
+.info__container {
+    display: none;
+}
+
+.help {
+    display: inline;
+}
+
 .instruction-text {
     color: #666666;
     font-size: 14px;
+    margin-top: 3px;
 }
 
 textarea {
-    margin-top: 10px;
+    margin: 10px 0px;
     width: 100%;
     font-family: Roboto-light, sans-serif;
     padding: 10px;
@@ -155,4 +220,31 @@ fieldset {
 
 a {
     text-decoration: none;
+}
+
+/* TOOLTIP */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #1d1d1d;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.info-icon:hover + .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show {
+    display: initial;
+}
+
+.hide {
+    display: none;
 }

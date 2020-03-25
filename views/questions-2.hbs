@@ -22,7 +22,7 @@
             <input type="text" name="currentpage" value="questions-3" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
 
-            <input type="submit" id="Submit" value="Volgende"/>     
+            <input class="next next-button" type="submit" id="Submit" value="Volgende"/>     
         </fieldset>
     </form>
 
@@ -38,8 +38,6 @@
             <input type="radio" value="yes" name="needhelp" hidden {{#if needhelp }} checked {{/if}}>
             <input type="radio" value="no" name="needhelp" hidden {{#unless needhelp }} checked {{/unless}}>
 
-            <input type="submit" id="Submit" value="Terug"/>  
+            <input class="back" type="submit" id="Submit" value="Terug"/>  
     </form>
 </article>
-
-{{> footer}}

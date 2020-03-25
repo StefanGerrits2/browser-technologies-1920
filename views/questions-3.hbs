@@ -24,7 +24,7 @@
             <input type="text" name="currentpage" value="finished" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
           
-            <input type="submit" id="Submit" value="Versturen"/>     
+            <input class="next next-button" type="submit" id="Submit" value="Versturen"/>     
         </fieldset>
     </form>
 
@@ -45,8 +45,6 @@
         <input name="question6" type="text" hidden {{#if question6}} value="{{question6}}" {{/if}}>
         <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
 
-        <input type="submit" id="Submit" value="Terug"/>  
+        <input class="back" type="submit" id="Submit" value="Terug"/>  
     </form>
 </article>
-
-{{> footer}}
