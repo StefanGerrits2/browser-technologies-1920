@@ -6,8 +6,10 @@
             <legend>Demografische informatie</legend>
             <label>
                 8. Wat is uw straat en huisnummer?
-                <input name="street" type="text" placeholder="Typ uw straat" {{#if street}} value="{{street}}" {{/if}}>
-                <input name="housenumber" type="text" placeholder="nummer" {{#if housenumber}} value="{{housenumber}}" {{/if}}>
+                <div id="street-number__container">
+                    <input name="street" type="text" placeholder="Typ uw straat" {{#if street}} value="{{street}}" {{/if}}>
+                    <input id="house-number" name="housenumber" type="text" placeholder="nummer" {{#if housenumber}} value="{{housenumber}}" {{/if}}>
+                </div>
             </label>
 
             <label>

@@ -29,16 +29,16 @@ body {
     font-family: Roboto-regular, sans-serif;
     min-height: 100%;
     color: white;
-    /* overflow: hidden; */
 }
 
 header h1 {
     font-family: Roboto-medium, sans-serif;
     color: white;
+    text-align: left;
 }
 
-header, article, #introduction {
-    padding: 0px 15px;
+article, #introduction {
+    padding: 0px 29px;
 }
 
 #introduction {
@@ -49,6 +49,7 @@ header {
     margin-top: -22px;
     padding-top: 22px;
     background-color: #222629;
+    padding-left: 29px;
 }
 
 /* BUTTONS */
@@ -70,7 +71,6 @@ header {
 .next {
     background-color: #86C232;
     color: #222629;
-    margin-top: 10px;
 }
 
 .next:hover {
@@ -85,7 +85,6 @@ header {
 }
 
 .back {
-    margin-left: 14px;
     display: inline-block;
     width: 56px;
     background-color: #6B6E70;
@@ -201,6 +200,14 @@ input[type="text"] {
     width: 40px;
 }
 
+#house-number {
+    width: 50px;
+}
+
+#house-number__container {
+    display: block;
+}
+
 .your-code {
     padding: 7px 10px;
     width: 100px;
@@ -222,10 +229,14 @@ footer {
 .info__container {
     display: none;
     cursor: pointer;
+  
 }
 
 .help {
     display: inline;
+    position: absolute;
+    z-index: 0;
+    margin: 2px 0px 0px 4px;
 }
 
 .instruction-text, .help-text {
@@ -247,17 +258,8 @@ textarea {
 
 fieldset {
     border: none;
-    animation: transition 500ms ease-in-out;
-}
-
-@keyframes transition {
-    from {
-        transform: translateX(-100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
+    padding-left: 0;
+    animation: left-to-mid 500ms ease-in-out;
 }
 
 a {
@@ -280,15 +282,13 @@ a {
 
 .info__container:hover + .tooltiptext {
     visibility: visible;
-    opacity: 1;
+    opacity: 3;
+    position: relative;
 }
 
-.show {
-    display: initial;
-}
-
-.hide {
-    display: none;
+.info__container {
+    width: 80px;
+    text-align: left;
 }
 
 .type-code__container {
@@ -314,4 +314,34 @@ a {
     margin-top: 16px;
     background-color: #61892F;
     color: white;
+}
+
+/* Toggle classes */
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+/* Key frames */
+@keyframes left-to-mid {
+    0% {transform: translateX(-100%);opacity: 0;} 
+    50% {opacity: .1;} 
+    100% {transform: translateX(0);opacity: 1;}
+}
+
+@media screen and (max-width: 600px) {
+    .home, 
+    #introduction,
+    header h1 {
+        text-align: center;
+    }
+
+    .type-code__container, 
+    .info__container.info__container,
+    #start-survey-getcode {
+        margin: 10px auto;
+    }
 }
