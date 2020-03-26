@@ -31,10 +31,18 @@ body {
     color: white;
 }
 
+header {
+    margin-top: -22px;
+    padding-top: 22px;
+    background-color: #222629;
+    padding-left: 29px;
+}
+
 header h1 {
     font-family: Roboto-medium, sans-serif;
     color: white;
     text-align: left;
+    padding: 15px 15px 15px 0px;
 }
 
 article, #introduction {
@@ -43,13 +51,6 @@ article, #introduction {
 
 #introduction {
     color: #959595;
-}
-
-header {
-    margin-top: -22px;
-    padding-top: 22px;
-    background-color: #222629;
-    padding-left: 29px;
 }
 
 /* BUTTONS */
@@ -337,6 +338,10 @@ a {
     #introduction,
     header h1 {
         text-align: center;
+    }
+
+    header {
+        padding-left: 15px;
     }
 
     .type-code__container, 
