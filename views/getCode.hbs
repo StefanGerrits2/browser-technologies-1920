@@ -2,23 +2,23 @@
 
 <article>
     <h1>Welkom!</h1>
-    <p>Als u besluit om later verder te werken aan de enquete, onthoud, of schrijf op, de volgende code:</p>
-
-    <div class="tooltip">
-        <div class="info__container">
-            <img class="info-icon" tabindex="0" src="/images/info.svg" alt="info">
-            <p class="help" >Help</p>
-        </div>
-        <span class="tooltiptext">Klik voor extra hulp</span>
-    </div>
-
-    <p class="instruction-text">Hint: selecteer de code en druk op ctrl + c om de code te kopiëren, en ctrl + v om deze code ergens te plakken.</p>
+    <p>Als u besluit om later verder te werken aan de enquête, onthoud, of schrijf op, de volgende code:</p>
     
     <form class="getCodeForm" action="/questions-1" method="post">
         <input class="your-code" type="text" name="user" value="{{user}}" readonly>
+        <div class="tooltip">
+            <div class="info__container" tabindex="0">
+                <img class="info-icon" src="/images/info.svg" alt="info">
+                <p class="help" >Help</p>
+            </div>
+            <span class="tooltiptext">Klik voor extra hulp</span>
+        </div>
+
+        <p class="instruction-text">Hint: selecteer de code en druk op ctrl + c om de code te kopiëren, en ctrl + v om deze code ergens te plakken.</p>
+
         <input type="text" name="currentpage" value="getCode" hidden>
 
-        <input class="next" id="start-survey-getcode" type="submit" id="Submit" value="Nieuwe enquete starten"/>
+        <input class="next" id="start-survey-getcode" type="submit" id="Submit" value="Nieuwe enquête starten"/>
     </form>
 </article>
 

@@ -20,12 +20,12 @@
                 9. Heeft u nog vragen of opmerkingen?
                 <textarea name="questions" cols="30" rows="10">{{#if questions}} {{questions}} {{/if}}</textarea>
             </label>
+        </fieldset>
 
             <input type="text" name="currentpage" value="finished" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
           
             <input class="next next-button" type="submit" id="Submit" value="Versturen"/>     
-        </fieldset>
     </form>
 
     <form action="/questions-2" method="post">

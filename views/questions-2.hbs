@@ -6,7 +6,7 @@
             <legend>Divers</legend>
             <label>
                 5. Heeft u gezondheidsklachten?
-                <input name="healthissues" type="text" {{#if healthissues}} value="{{healthissues}}" {{/if}}>
+                <textarea name="healthissues" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan niet lopen">{{#if healthissues}} {{healthissues}} {{/if}}</textarea>
             </label>
 
             <label>
@@ -15,15 +15,16 @@
             </label>
 
             <label>
-                7. Vraag 7
-                <textarea name="question7" cols="30" rows="10">{{#if question7}} {{question7}} {{/if}}</textarea>
+                7. Wat is uw e-mail adres?
+                <p class="instruction-text">Hiermee zullen wij u contacteren</p>
+                <input name="question7" type="text" placeholder="voorbeeld@gmail.com" {{#if question7}} value="{{question7}}" {{/if}}>
             </label>
+        </fieldset>
 
             <input type="text" name="currentpage" value="questions-3" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
 
             <input class="next next-button" type="submit" id="Submit" value="Volgende"/>     
-        </fieldset>
     </form>
 
     <form action="/questions-1" method="post">

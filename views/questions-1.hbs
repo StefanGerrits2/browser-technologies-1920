@@ -6,7 +6,7 @@
             <legend>Algemeen</legend>
             <label>
                 1. Hoe oud bent u?
-                <input name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" {{#if age}} value="{{age}}" {{/if}}><p class="inline-block year">jaar</p>
+                <input id="age" name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" {{#if age}} value="{{age}}" {{/if}}><p class="inline-block year">jaar</p>
             </label>
 
             <label>
@@ -30,6 +30,7 @@
                     <input type="radio" value="no" name="needhelp" {{#unless needhelp }} checked {{/unless}}>
                 </label>
             </label>
+        </fieldset>
 
             <input type="text" name="currentpage" value="questions-2" hidden>
             <input type="text" name="user" value="{{user}}" hidden>
@@ -40,7 +41,6 @@
             <input name="question7" hidden {{#if question7}} value="{{question7}}" {{/if}}>
            
             <input class="next next-button" type="submit" id="Submit" value="Volgende"/>    
-        </fieldset>
     </form>
     
     <a class="back" href="/getCode">Terug</a>

@@ -23,28 +23,32 @@ html {
 }
 
 body {
-    background-color:#ececec;
+    background-color:#222629;
     margin: 0;
     padding: 0;
     font-family: Roboto-regular, sans-serif;
     min-height: 100%;
+    color: white;
     /* overflow: hidden; */
 }
 
 header h1 {
     font-family: Roboto-medium, sans-serif;
+    color: white;
 }
 
 header, article, #introduction {
     padding: 0px 15px;
 }
 
+#introduction {
+    color: #959595;
+}
+
 header {
     margin-top: -22px;
     padding-top: 22px;
-    border-bottom: 1px solid black;
-    background-color: #b6ccff;
-    color: black;
+    background-color: #222629;
 }
 
 /* BUTTONS */
@@ -64,9 +68,15 @@ header {
 }
 
 .next {
-    background-color: #0c1e4e;
-    color: white;
+    background-color: #86C232;
+    color: #222629;
     margin-top: 10px;
+}
+
+.next:hover {
+    background-color: #222629;
+    color: #86C232;
+    transition: 300ms ease-in-out;
 }
 
 .next-button {
@@ -78,19 +88,24 @@ header {
     margin-left: 14px;
     display: inline-block;
     width: 56px;
-    background-color: #d6d6d6;
-    color: black;
+    background-color: #6B6E70;
+    color: white;
     font-size: 14px;
 }
 
+.back:hover {
+    background-color: white;
+    color: #6B6E70;
+    transition: 200ms ease-in-out;
+}
 
 #back-to-home {
     display: block;
     margin-top: 20px;
-    background-color: #0c1e4e;
-    padding: 15px;
-    width: 130px;
+    background-color: #6B6E70;
     color: white;
+    padding: 12px;
+    width: 130px;
 }
 
 /* */
@@ -100,7 +115,7 @@ header {
 }
 
 header a:visited {
-    color: black;
+    color: white;
 }
 
 legend {
@@ -124,12 +139,18 @@ article {
 }
 
 #start-survey-home {
-    background-color: #0e7c17;
-    color: white;
+    background-color: #86C232;
+    color: #222629;
     padding: 8px;
     width: 170px;
     margin-bottom: 15px;
     display: inline-block;
+}
+
+#start-survey-home:hover {
+    background-color: #222629;
+    color: #86C232;
+    transition: 200ms ease-in-out;
 }
 
 #start-survey-home, #start-survey-getcode {
@@ -137,10 +158,19 @@ article {
     margin-top: 0;
 }
 
+#start-survey-getcode {
+    display: block;
+    margin-top: 15px;
+}
+
 /* FOCUS STATES */
+*:focus {
+    outline: 2px solid #0e7c17;
+}
+
 header a:focus {
     background-color: white;
-    color: #0c1e4e;
+    color: black;
 }
 
 #start-survey-home:focus {
@@ -150,11 +180,11 @@ header a:focus {
 
 .next:focus, .back:focus {
     background-color: white;
-    color: #0c1e4e;
+    color: black;
 }
 
 input[type="text"]:focus, textarea:focus {
-    background-color: #b6ccff;
+    background-color: #e3ffd1;
 }
 
 /*Input fields */
@@ -167,17 +197,16 @@ input[type="text"] {
     padding: .3em;
 }
 
-.continue-last-survey {
-    margin-top: 16px;
+#age {
+    width: 40px;
 }
 
 .your-code {
-    background-color: #8f1b1b;
-    color: white;
     padding: 7px 10px;
     width: 100px;
     font-size: 20px;
     border: none;
+    margin-bottom: 15px;
 }
 
 footer {
@@ -200,7 +229,7 @@ footer {
 }
 
 .instruction-text, .help-text {
-    color: #666666;
+    color: #8f989e;
     font-size: 14px;
     margin-top: 3px;
 }
@@ -218,8 +247,17 @@ textarea {
 
 fieldset {
     border: none;
-    /* display: flex;
-    flex-direction: row; */
+    animation: transition 500ms ease-in-out;
+}
+
+@keyframes transition {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 a {
@@ -240,7 +278,7 @@ a {
     font-size: 12px;
 }
 
-.info-icon:hover + .tooltiptext {
+.info__container:hover + .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
@@ -251,4 +289,29 @@ a {
 
 .hide {
     display: none;
+}
+
+.type-code__container {
+    background-color: #474B4F;
+    border-radius: 5px;
+    width: 140px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.type-code__container label {
+    margin-top: 0;
+}
+
+#code {
+    display: block;
+    margin-top: 10px;
+    width: 125px;
+    text-align: center;
+}
+
+.continue-last-survey {
+    margin-top: 16px;
+    background-color: #61892F;
+    color: white;
 }

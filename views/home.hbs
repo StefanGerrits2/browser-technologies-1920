@@ -1,19 +1,21 @@
 {{> header}}
 
-<p id="introduction">Dit is een enquete die u in kunt vullen als u hulp nodig heeft bij de thuisquarantaine in verband met het coronavirus.</p>
+<p id="introduction">Dit is een enquête die u in kunt vullen als u hulp nodig heeft bij de thuisquarantaine in verband met het coronavirus.</p>
 
 <article>
-    <h1>Start een nieuwe enquete, of ga verder waar u de vorige keer was gebleven.</h1>
+    <h1>Start een nieuwe enquête, of ga verder waar u de vorige keer was gebleven.</h1>
 
-    <a id="start-survey-home" href="/getCode">Nieuwe enquete starten</a>
+    <a id="start-survey-home" href="/getCode">Nieuwe enquête starten</a>
 
     <form action="/existingCode" method="post">
-        <label>
-            Vul hier uw code in 
-            <input id="code" name="user" type="text" maxlength="6">
-        </label> 
+        <div class="type-code__container">
+            <label>
+                Vul hier uw code in 
+                <input id="code" name="user" type="text" maxlength="6">
+            </label> 
+            <input class="continue-last-survey next" type="submit" id="Submit" value="Hervat mijn enquête"/>
+        </div>
 
-        <input class="continue-last-survey next" type="submit" id="Submit" value="Hervat mijn enquete"/>
         {{#if invalidCode}}
             {{> invalidCode}}
         {{/if}}
