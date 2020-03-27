@@ -18,3 +18,23 @@ function toggle() {
         instructionText.classList.remove('show');
     }
 }
+
+if (window.localStorage) {
+
+    var newCode = document.querySelector('.your-code').value;
+    console.log(newCode);
+    var arr = [];
+    
+    if (localStorage.getItem('used codes') !== null) {
+        var existingData = JSON.parse(localStorage.getItem('used codes'));
+        console.log(existingData);
+    
+        for (i=0; i < existingData.length; i++){
+            arr.push(existingData[i]);
+        }
+    }
+
+    arr.push(newCode);
+    
+    localStorage.setItem('used codes', JSON.stringify(arr));
+}

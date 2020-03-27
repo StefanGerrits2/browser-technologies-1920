@@ -2,10 +2,14 @@
 
 <p id="introduction">Dit is een enquête die u in kunt vullen als u hulp nodig heeft bij de thuisquarantaine in verband met het coronavirus.</p>
 
+<div id="home-image"></div>
+
 <article class="home">
-    <h1>Start een nieuwe enquête, of ga verder waar u de vorige keer was gebleven.</h1>
+    <h2>Start een nieuwe enquête</h2>
 
     <a id="start-survey-home" href="/getCode">Nieuwe enquête starten</a>
+
+    <h3 id="continue-title" >of ga verder waar u de vorige keer was gebleven.</h3>
 
     <form action="/existingCode" method="post">
         <div class="type-code__container">
@@ -21,3 +25,5 @@
         {{/if}}
     </form>
 </article>
+
+<script src="/js/home.js"></script>

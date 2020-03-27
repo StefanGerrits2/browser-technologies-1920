@@ -25,7 +25,7 @@ html {
 body {
     background-color:#222629;
     margin: 0;
-    padding: 0 0 20px 0;
+    padding: 0;
     font-family: Roboto-regular, sans-serif;
     min-height: 100%;
     color: white;
@@ -326,7 +326,7 @@ a {
     background-color: #2a2b2c;
     padding: 20px;
     border-radius: 5px;
-    max-width: 200px;
+    width: 200px;
 }
 
 #continue-title {
@@ -338,7 +338,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 400px;
+    height: 200px;
 }
 
 /* Toggle classes */
@@ -379,6 +379,6 @@ a {
     }
 
     #home-image {
-        height: 200px;
+        height: 400px;
     }
 }
