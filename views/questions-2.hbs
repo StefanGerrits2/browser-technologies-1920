@@ -1,5 +1,12 @@
 {{> header}}
 
+<section>
+    <p>Voortgang: 33%</p>
+    <div id="progressbar">
+        <div id="step2"></div>
+    </div>
+</section>
+
 <article>
     <form action="/questions-3" method="post">
         <fieldset>
@@ -15,9 +22,9 @@
             </label>
 
             <label>
-                7. Wat is uw e-mail adres?
+                7. Wat is uw e-mailadres?
                 <p class="instruction-text">Hiermee zullen wij u contacteren</p>
-                <input name="question7" type="text" placeholder="voorbeeld@gmail.com" {{#if question7}} value="{{question7}}" {{/if}}>
+                <input name="question7" type="email" placeholder="voorbeeld@gmail.com" {{#if question7}} value="{{question7}}" {{/if}}>
             </label>
         </fieldset>
 

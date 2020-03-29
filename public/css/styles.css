@@ -25,7 +25,6 @@ html {
 body {
     background-color:#222629;
     margin: 0;
-    padding: 0 0 20px 0;
     font-family: Roboto-regular, sans-serif;
     min-height: 100%;
     color: white;
@@ -33,20 +32,30 @@ body {
 
 header {
     margin-top: -22px;
-    padding-top: 22px;
+    padding-top: 10px;
     background-color: #222629;
-    padding-left: 29px;
+    max-width: 750px;
+    margin: 0px auto;
 }
 
 header h1 {
     font-family: Roboto-medium, sans-serif;
     color: white;
-    text-align: left;
     padding: 15px 15px 15px 0px;
+}
+
+/* Center form */
+section, article {
+    max-width: 750px;
+    margin: 30px auto;
 }
 
 article, #introduction {
     padding: 0px 29px;
+}
+
+h3 {
+    margin-top: 0;
 }
 
 #introduction {
@@ -136,6 +145,7 @@ label {
 article {
     margin-top: 30px;
     height: 90%;
+    position: relative;
 }
 
 #start-survey-home {
@@ -164,6 +174,7 @@ article {
 
 /* FOCUS STATES */
 input[type="text"]:focus, 
+input[type="email"]:focus,
 textarea:focus:focus,
 header a:focus,
 .next:focus, 
@@ -187,18 +198,23 @@ header a:focus {
     color: black;
 }
 
-input[type="text"]:focus, textarea:focus {
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus {
     background-color: #e3ffd1;
 }
 
 /*Input fields */
-input[type="text"], textarea {
+input[type="text"], 
+input[type="email"],
+textarea {
     border-radius: 5px;
     border: 1px solid #adadad;
 }
 
-input[type="text"] {
-    padding: .3em;
+input[type="text"],
+input[type="email"] {
+    padding: 5px;
 }
 
 #age {
@@ -267,8 +283,32 @@ fieldset {
     animation: left-to-mid 500ms ease-in-out;
 }
 
-a {
-    text-decoration: none;
+/* Progress bar */
+
+#progressbar {
+    background-color: black;
+    border-radius: 13px;
+    padding: 2px;
+}
+  
+#progressbar div {
+    background-color: #86C232;
+    height: 10px;
+    border-radius: 10px;
+}
+
+#progressbar #step1 {
+    width: 0%;
+}
+
+#progressbar #step2 {
+    width: 33%;
+    transition: 500ms;
+}
+
+#progressbar #step3 {
+    width: 66%;
+    transition: 500ms;
 }
 
 /* TOOLTIP */
@@ -333,6 +373,10 @@ a {
     margin-top: 40px;
 }
 
+a {
+    text-decoration: none;
+}
+
 #home-image {
     background-image: url("/images/home-image.jpg");
     background-repeat: no-repeat;
@@ -357,27 +401,27 @@ a {
     100% {transform: translateX(0);opacity: 1;}
 }
 
+.home, 
+#introduction,
+header h1 {
+    text-align: center;
+}
+
+header {
+    padding-left: 15px;
+}
+
+#used-codes {
+    margin: 0em auto;
+}
+
+.type-code__container, 
+.info__container.info__container,
+#start-survey-getcode {
+    margin: 20px auto;
+}
+
 @media screen and (max-width: 600px) {
-    .home, 
-    #introduction,
-    header h1 {
-        text-align: center;
-    }
-
-    header {
-        padding-left: 15px;
-    }
-
-    #used-codes {
-        margin: 0em auto;
-    }
-
-    .type-code__container, 
-    .info__container.info__container,
-    #start-survey-getcode {
-        margin: 20px auto;
-    }
-
     #home-image {
         height: 200px;
     }

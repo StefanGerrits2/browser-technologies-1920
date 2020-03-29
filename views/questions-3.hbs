@@ -1,5 +1,12 @@
 {{> header}}
 
+<section>
+    <p>Voortgang: 66%</p>
+    <div id="progressbar">
+        <div id="step3"></div>
+    </div>
+</section>
+
 <article>
     <form id="form3" action="/finished" method="post">
         <fieldset>
@@ -19,7 +26,7 @@
             </label>
 
             <label>
-                9. Heeft u nog vragen of opmerkingen?
+                10. Heeft u nog vragen of opmerkingen?
                 <textarea name="questions" cols="30" rows="10">{{#if questions}} {{questions}} {{/if}}</textarea>
             </label>
         </fieldset>
