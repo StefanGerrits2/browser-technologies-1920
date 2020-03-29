@@ -10,22 +10,41 @@ In short:
 A survey for elderly people who need home help because they are in quarantine, if they accidentally close the browser or want to continue later, this can be done using the code if localstorage / cookies is off, otherwise with localstorage / cookies if this is on .
 
 ## Flow if you're new to the survey
-- Start 
-![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
-- Receive code for later use
-![image](https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png)
-- Survey with pagination - page 1
-![image](https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png)
-- Survey with pagination - pagina 3
-![image](https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png)
+<details>
+    <summary >- Start </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png">
+</details>
+
+<details>
+    <summary >- Receive code for later use </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png">
+</details>
+
+<details>
+    <summary >- Survey with pagination - page 1 </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png">
+</details>
+
+<details>
+    <summary >- Survey with pagination - pagina 3 </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png">
+</details>
 
 ## Flow if you already filled some of it in, and want to keep on going
-- Start
-![image](https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png)
-- Type in your code
-![image](https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png)
-- Keep on going where you quit last time
-![image](https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png)
+<details>
+    <summary >- Start </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png">
+</details>
+
+<details>
+    <summary >- Type in your code </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png">
+</details>
+
+<details>
+    <summary >- Keep on going where you quit last time </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png">
+</details>
 
 ### Progressive enhancement
 
@@ -43,15 +62,35 @@ To make it more usable I want to add CSS and some simple client side Javascript.
 
 For this state I want to add nice things like animations and transitions between the pagination. In this state Javascript is enabled and probably on a modern browser. This will be the 'wow' state of my survey.
 
-### 3 things I want feedback on
+### My 3 layers 
 
-* My HTML, I have most of my HTML done and I want to know if it's semantic. You can check this in my `views` folder, or inspect element in my live link.
+#### Functional and reliable
+Add screenshot here
 
-* My 3 "layers" I explained above. Are these good enhancements per layer? Any suggestions?
+Description here
 
-* My focus states I currently made, you can check these by tabbing through every page.
+#### Usable
+Add screenshot here
+
+Description here
+
+#### Pleasureable
+Add screenshot here
+
+Description here
 
 ### Feature detection
+
+I detect if there is localstorage available with `window.localStorage`
+
+When this is available, I store used keys into local storage. Now I can show all used previous codes on the homepage in case someone lost their code. The most recent code will be on top:
+![image](https://user-images.githubusercontent.com/45566396/77850617-063eb600-71d4-11ea-8b26-05e8eb795564.png)
+
+### Code
+
+#### CSS
+
+CSS code here
 
 #### HTML
 

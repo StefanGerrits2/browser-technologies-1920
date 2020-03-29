@@ -50,7 +50,7 @@ section, article {
     margin: 30px auto;
 }
 
-article, #introduction {
+article, #introduction, section {
     padding: 0px 29px;
 }
 
