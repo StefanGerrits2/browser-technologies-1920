@@ -5,8 +5,17 @@ if(doesClassListWork()) {
     instructionText.classList.add('hide');
     infoContainer.classList.add('show');
 
-    infoContainer.addEventListener('click', toggleInfo);
-    infoContainer.addEventListener('keypress', toggleInfo);
+    if (document.addEventListener) {
+        // Eventlistener exists
+        infoContainer.addEventListener('click', toggleInfo);
+        infoContainer.addEventListener('keypress', toggleInfo);
+    }
+    
+    else if (document.attachEvent) {              
+        // Eventlistener does not exist -> use attachEvent
+        infoContainer.attachEvent('onclick', toggleInfo);
+        infoContainer.attachEvent('keypress', toggleInfo);
+    }
 
     // Toggle
     function toggleInfo() {

@@ -72,3 +72,7 @@ function isLocalStorageAvailable() {
             (storage && storage.length !== 0);
     }
 }
+
+if('addEventListener' in document) {
+    console.log('ja');
+}
