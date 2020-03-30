@@ -408,6 +408,7 @@ input[type="email"] {
     background-size: cover;
     position: relative;
     height: 400px;
+    background-color: #474B4F;
 }
 
 /* Toggle classes */

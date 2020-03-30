@@ -18,13 +18,15 @@
                     <input id="house-number" name="housenumber" type="text" placeholder="nummer" {{#if housenumber}} value="{{housenumber}}" {{/if}} required>
                 </div>
             </label>
-
+        </fieldset>
+        <fieldset>
             <label>
                 9. Wat is uw postcode?
                 <p class="instruction-text">Voer een 4-cijferige postcode in, bijvoorbeeld: 1234 of 3215</p>
                 <input name="zipcode" type="text" inputmode="numeric" pattern="[0-9]{4}" {{#if zipcode}} value="{{zipcode}}" {{/if}} required>
             </label>
-
+        </fieldset>
+        <fieldset>
             <label>
                 10. Heeft u nog vragen of opmerkingen?
                 <textarea name="questions" cols="30" rows="10">{{#if questions}} {{questions}} {{/if}}</textarea>

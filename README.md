@@ -7,7 +7,7 @@ Live link: https://sleepy-everglades-16860.herokuapp.com/
 
 In short:
 
-A survey for elderly people who need home help because they are in quarantine, if they accidentally close the browser or want to continue later, this can be done using the code if localstorage / cookies is off, otherwise with localstorage / cookies if this is on .
+A survey for elderly people who need home help because they are in quarantine, if they accidentally close the browser or want to continue later, this can be done because I save the input data server side so it will work on every browser even if javascript is disabled.
 
 ## Flow if you're new to the survey
 <details>
@@ -65,32 +65,143 @@ For this state I want to add nice things like animations and transitions between
 ### My 3 layers 
 
 #### Functional and reliable
-Add screenshot here
+Screenshot here
 
-Description here
+This is the basic semantic HTML and server side stuff. In this layer it's important that the core functionality works in every browser on every device. I save user input server side because there is no client side javascript in this layer. The core functionality works in every browser on every device. I've tested this on my own browsers, devices and even Browserstack.
 
 #### Usable
 Add screenshot here
 
-Description here
+In this layer, CSS is added to make it more usable.
 
-#### Pleasureable
+#### Pleasurable
 Add screenshot here
 
-Description here
+In the last pleasurable layer, I've added the following features
+* CSS animations
+* CSS gradients
+* Javscript client side local storage
+
+With local storage I save used codes people have used. If they forget their code somehow, they can always see which codes they used before on the homepage.
+
+* Javascript client side toggle button
+
+This is the 'wow' state of my survey. All of the features above work in every modern browser like Firefox, Chrome etc. They all have fallbacks if my survey is visited on an older browser. This means my survey is progressively enhanced.
 
 ### Feature detection
 
-I detect if there is localstorage available with `window.localStorage`
+* Local storage
+
+I check if local storage is available with this function:
+```javascript
+// Source used to check if local storage is available:
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_availability)
+function isLocalStorageAvailable() {
+    var storage;
+    try {
+        storage = window['localStorage'];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        // Local storage is available
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
+        // Local storage is not available
+    }
+}
+```
 
 When this is available, I store used keys into local storage. Now I can show all used previous codes on the homepage in case someone lost their code. The most recent code will be on top:
 ![image](https://user-images.githubusercontent.com/45566396/77850617-063eb600-71d4-11ea-8b26-05e8eb795564.png)
 
-### Code
+When this is not available, the fallback will be that there won't be a box showing these codes. I made it so when local storage exists, it creates all elements. So when local storage does not exist, nothing will be shown.
+
+* Class lists
+
+addClassList.contains, remove and add it not supported in every browser. I use these methods to toggle a class to make info text visible when you click on the info icon. When this is not supported, the text will always be shown without the toggle icon. I check if classlists works with this function:
+
+```javascript
+// Check if classlists work
+function doesClassListWork() {
+    var element = document.querySelector('article');
+    
+    if(element.classList.contains('home')) {
+        // Classlist contains is available, if this is available, add and remove are also available
+        return true;
+    }
+
+    else {
+        // Classlist is not available
+        return false;
+    }
+}
+```
+
+* Eventlisteners
+
+For IE 8 and earlier versions, they do not support AddEventListener()
+Because of this I need to make a fallback with AttachEvent, because this function is available in these old browsers:
+```javascript
+    if (document.addEventListener) {
+        // Eventlistener exists
+        infoContainer.addEventListener('click', toggleInfo);
+        infoContainer.addEventListener('keypress', toggleInfo);
+    }
+    
+    else if (document.attachEvent) {              
+        // Eventlistener does not exist -> use attachEvent
+        infoContainer.attachEvent('onclick', toggleInfo);
+        infoContainer.attachEvent('keypress', toggleInfo);
+    }
+```
+### Code examples
 
 #### CSS
 
-CSS code here
+* Background gradients
+I added background gradients if the browser supports it. I've writting a @supports for this.
+The default background color and hover which is also the fallback, is just a plain background color with a different background color on hover.
+
+When background size AND background image with linear gradient is supported, overwrite the default values.
+
+```CSS
+/* Fallback */
+#back-to-home {
+    background-color: #6B6E70;
+    transition: 300ms ease-in-out;
+}
+
+#back-to-home:hover,
+#back-to-home:focus {
+    background-color: #444647;
+}
+
+/* Support for nice hover and focus effect */
+@supports (background-size: 200% auto) and (background-image: linear-gradient(to right, #6B6E70 0%, #61892F 51%, #6B6E70 100%)) {
+    #back-to-home {
+        background-image: linear-gradient(to right, #6B6E70 0%, #61892F 51%, #6B6E70 100%);
+        background-size: 200% auto;
+    }
+    
+    #back-to-home:hover,
+    #back-to-home:focus {       
+        background-position: right center;
+    }
+}
+```
 
 #### HTML
 

@@ -55,6 +55,7 @@ function isLocalStorageAvailable() {
         var x = '__storage_test__';
         storage.setItem(x, x);
         storage.removeItem(x);
+        // Local storage is available
         return true;
     }
     catch(e) {
@@ -70,9 +71,6 @@ function isLocalStorageAvailable() {
             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
             // acknowledge QuotaExceededError only if there's something already stored
             (storage && storage.length !== 0);
+        // Local storage is not available
     }
-}
-
-if('addEventListener' in document) {
-    console.log('ja');
 }
