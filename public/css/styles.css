@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
     font-family: Roboto-medium;
     src: url(../fonts/Roboto/Roboto-Medium.ttf);
@@ -18,6 +19,7 @@
     src: url(../fonts/Roboto/Roboto-LightItalic.ttf);
 }
 
+/* Generic styling*/
 html {
     height: 100%;
 }
@@ -44,7 +46,12 @@ header h1 {
     padding: 15px 15px 15px 0px;
 }
 
-/* Center form */
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color:#ececec;
+}
+
 section, article {
     max-width: 750px;
     margin: 30px auto;
@@ -58,8 +65,51 @@ h3 {
     margin-top: 0;
 }
 
+textarea {
+    margin: 10px 0px;
+    width: 100%;
+    font-family: Roboto-light, sans-serif;
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+    padding-left: 0;
+    animation: left-to-mid 500ms ease-in-out;
+}
+
+legend {
+    font-weight: 1000;
+    font-family: Roboto-medium, sans-serif;
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+article {
+    margin-top: 30px;
+    height: 90%;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Text elements*/
 #introduction {
     color: #959595;
+}
+
+#finished-text {
+    text-align: center;
+}
+
+#continue-title {
+    margin-top: 40px;
 }
 
 /* BUTTONS */
@@ -81,12 +131,12 @@ h3 {
 .next {
     background-color: #86C232;
     color: #222629;
+    transition: 300ms ease-in-out;
 }
 
 .next:hover {
     background-color: #222629;
     color: #86C232;
-    transition: 300ms ease-in-out;
 }
 
 .next-button {
@@ -100,23 +150,41 @@ h3 {
     background-color: #6B6E70;
     color: white;
     font-size: 14px;
+    transition: 300ms ease-in-out;
 }
 
 .back:hover {
     background-color: white;
     color: #6B6E70;
-    transition: 200ms ease-in-out;
 }
 
 #back-to-home {
     display: block;
-    margin-top: 20px;
-    background-color: #6B6E70;
     color: white;
     padding: 12px;
     width: 130px;
+    margin: 20px auto;
+    background-color: #6B6E70;
+    transition: 300ms ease-in-out;
 }
 
+#back-to-home:hover,
+#back-to-home:focus {
+    background-color: #444647;
+}
+
+/* Support for nice hover and focus effect */
+@supports (background-size: 200% auto) and (background-image: linear-gradient(to right, #6B6E70 0%, #61892F 51%, #6B6E70 100%)) {
+    #back-to-home {
+        background-image: linear-gradient(to right, #6B6E70 0%, #61892F 51%, #6B6E70 100%);
+        background-size: 200% auto;
+    }
+    
+    #back-to-home:hover,
+    #back-to-home:focus {       
+        background-position: right center;
+    }
+}
 /* */
 
 .inline-block {
@@ -127,39 +195,18 @@ header a:visited {
     color: white;
 }
 
-legend {
-    font-weight: 1000;
-    font-family: Roboto-medium, sans-serif;
-}
-
-.year {
-    margin-left: 10px;
-}
-
-label {
-    display: inline-block;
-    width: 100%;
-    margin-top: 10px;
-}
-
-article {
-    margin-top: 30px;
-    height: 90%;
-    position: relative;
-}
-
 #start-survey-home {
     background-color: #86C232;
     color: #222629;
     padding: 8px;
     width: 170px;
     display: inline-block;
+    transition: 300ms ease-in-out;
 }
 
 #start-survey-home:hover {
     background-color: #222629;
     color: #86C232;
-    transition: 200ms ease-in-out;
 }
 
 #start-survey-home, #start-survey-getcode {
@@ -179,7 +226,8 @@ textarea:focus:focus,
 header a:focus,
 .next:focus, 
 .back:focus,
-#start-survey-home:focus {
+#start-survey-home:focus,
+#back-to-home:focus {
     outline: 2px solid #0e7c17;
 }
 
@@ -237,10 +285,8 @@ input[type="email"] {
     margin-bottom: 15px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    background-color:#ececec;
+.year {
+    margin-left: 10px;
 }
 
 .info-icon {
@@ -270,21 +316,7 @@ footer {
     margin-top: 10px;
 }
 
-textarea {
-    margin: 10px 0px;
-    width: 100%;
-    font-family: Roboto-light, sans-serif;
-    padding: 10px;
-}
-
-fieldset {
-    border: none;
-    padding-left: 0;
-    animation: left-to-mid 500ms ease-in-out;
-}
-
 /* Progress bar */
-
 #progressbar {
     background-color: black;
     border-radius: 13px;
@@ -335,6 +367,7 @@ fieldset {
     width: 80px;
     text-align: left;
 }
+/* */
 
 .type-code__container {
     background-color: #474B4F;
@@ -367,14 +400,6 @@ fieldset {
     padding: 20px;
     border-radius: 5px;
     max-width: 200px;
-}
-
-#continue-title {
-    margin-top: 40px;
-}
-
-a {
-    text-decoration: none;
 }
 
 #home-image {
@@ -412,7 +437,7 @@ header {
 }
 
 #used-codes {
-    margin: 0em auto;
+    margin: 0 auto;
 }
 
 .type-code__container, 

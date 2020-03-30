@@ -13,17 +13,17 @@
             <legend>Algemeen</legend>
             <label>
                 1. Hoe oud bent u?
-                <input id="age" name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" {{#if age}} value="{{age}}" {{/if}}><p class="inline-block year">jaar</p>
+                <input id="age" name="age" type="text" inputmode="numeric" pattern="[0-9]{2,3}" {{#if age}} value="{{age}}" {{/if}} required><p class="inline-block year">jaar</p>
             </label>
 
             <label>
                 2. Wat is uw naam?
-                <input name="fullname" type="text" placeholder="voornaam achternaam" {{#if fullname}} value="{{fullname}}" {{/if}}>
+                <input name="fullname" type="text" placeholder="voornaam achternaam" {{#if fullname}} value="{{fullname}}" {{/if}} required>
             </label>
 
             <label>
                 3. Waar heeft u hulp bij nodig?
-                <textarea name="reason" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan zelf geen boodschappen doen">{{#if reason}} {{reason}} {{/if}}</textarea>
+                <textarea name="reason" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan zelf geen boodschappen doen" required>{{#if reason}} {{reason}} {{/if}}</textarea>
             </label>
             
             <labek>
