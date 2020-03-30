@@ -15,14 +15,12 @@
                 5. Heeft u gezondheidsklachten?
                 <textarea name="healthissues" cols="50" rows="10" placeholder="Bijvoorbeeld: Ik kan niet lopen">{{#if healthissues}} {{healthissues}} {{/if}}</textarea>
             </label>
-        </fieldset>
-        <fieldset>
+     
             <label>
                 6. Vraag 6
                 <input name="question6" type="text" {{#if question6}} value="{{question6}}" {{/if}}>
             </label>
-        </fieldset>
-        <fieldset>
+    
             <label>
                 7. Wat is uw e-mailadres?
                 <p class="instruction-text">Hiermee zullen wij u contacteren</p>
@@ -30,24 +28,24 @@
             </label>
         </fieldset>
 
-            <input type="text" name="currentpage" value="questions-3" hidden>
-            <input type="text" name="user" value="{{user}}" hidden>
+        <input type="text" name="currentpage" value="questions-3" hidden>
+        <input type="text" name="user" value="{{user}}" hidden>
 
-            <input class="next next-button" type="submit" id="Submit" value="Volgende"/>     
+        <input class="next next-button" type="submit" id="Submit" value="Volgende"/>     
     </form>
 
     <form action="/questions-1" method="post">
-            {{!-- HIDDEN INPUTS - general --}}
-            <input type="text" name="currentpage" value="questions-2" hidden>
-            <input type="text" name="user" value="{{user}}" hidden>
+        {{!-- HIDDEN INPUTS - general --}}
+        <input type="text" name="currentpage" value="questions-2" hidden>
+        <input type="text" name="user" value="{{user}}" hidden>
 
-            {{!-- HIDDEN INPUTS - question 1 --}}
-            <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>
-            <input name="fullname" type="text" hidden {{#if fullname}} value="{{fullname}}" {{/if}}>
-            <input name="reason" hidden {{#if reason}} value="{{reason}}" {{/if}}>
-            <input type="radio" value="yes" name="needhelp" hidden {{#if needhelp }} checked {{/if}}>
-            <input type="radio" value="no" name="needhelp" hidden {{#unless needhelp }} checked {{/unless}}>
+        {{!-- HIDDEN INPUTS - question 1 --}}
+        <input name="age" type="text" hidden {{#if age}} value="{{age}}" {{/if}}>
+        <input name="fullname" type="text" hidden {{#if fullname}} value="{{fullname}}" {{/if}}>
+        <input name="reason" hidden {{#if reason}} value="{{reason}}" {{/if}}>
+        <input type="radio" value="yes" name="needhelp" hidden {{#if needhelp }} checked {{/if}}>
+        <input type="radio" value="no" name="needhelp" hidden {{#unless needhelp }} checked {{/unless}}>
 
-            <input class="back" type="submit" id="Submit" value="Terug"/>  
+        <input class="back" type="submit" id="Submit" value="Terug"/>  
     </form>
 </article>

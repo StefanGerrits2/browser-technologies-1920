@@ -48,31 +48,17 @@ A survey for elderly people who need home help because they are in quarantine, i
 
 ### Progressive enhancement
 
-#### Functional and reliable
-
-The bottom basic experience will just be HTML. Because Javascript is disabled, I need to save the input and progress server side! I'm now busy building it and I hope I get it done this weekend. My live link right now is just html, some css and a little bit of server side for the data. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device. When you enter a code that exists, it takes you to the page where you quit last time you filled in the survey.
-
-This basic experience also includes pagination, I built this server side so it works in every browser.
-
-#### Usable
-
-To make it more usable I want to add CSS and some simple client side Javascript. For example simple styling (for example colors, fonts and states for buttons and links) and save answers in localstorage for the core feature.
-
-#### Pleasureable
-
-For this state I want to add nice things like animations and transitions between the pagination. In this state Javascript is enabled and probably on a modern browser. This will be the 'wow' state of my survey.
-
 ### My 3 layers 
 
 #### Functional and reliable
 Screenshot here
 
-This is the basic semantic HTML and server side stuff. In this layer it's important that the core functionality works in every browser on every device. I save user input server side because there is no client side javascript in this layer. The core functionality works in every browser on every device. I've tested this on my own browsers, devices and even Browserstack.
+This is the basic semantic HTML and server side stuff. In this layer it's important that the core functionality works in every browser on every device. I save user input server side because there is no client side javascript in this layer. The core functionality works in every browser on every device. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device. When you enter a code that exists, it takes you to the page where you quit last time you filled in the survey. I've tested this on my own browsers, devices and even Browserstack. 
 
 #### Usable
 Add screenshot here
 
-In this layer, CSS is added to make it more usable.
+In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active).
 
 #### Pleasurable
 Add screenshot here
@@ -80,7 +66,7 @@ Add screenshot here
 In the last pleasurable layer, I've added the following features
 * CSS animations
 * CSS gradients
-* Javscript client side local storage
+* Javascript client side local storage
 
 With local storage I save used codes people have used. If they forget their code somehow, they can always see which codes they used before on the homepage.
 
