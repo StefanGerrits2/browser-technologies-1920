@@ -54,7 +54,7 @@ The core of this survey is to make sure people can fill in a survey, and can con
 
 ### Progressive enhancement
 
-I've built my survey in 3 layers. I did this because the application needs to be progressively enhanced. The first layer is the core function that works in every browser on every device. The application will have more features if the browser can handle this. This will be tested with feature detection. Because of these extra layers my application is progressively enchanced. See below for details per layer.
+I've built my survey in 3 layers. The first layer is the core function that works in every browser on every device. The application will have more features if the browser can handle this. This will be tested with feature detection. Because of these extra layers my application is progressively enchanced. See below for details per layer.
 
 ### My 3 layers 
 
