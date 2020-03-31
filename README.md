@@ -1,4 +1,6 @@
-# Assignment 2 Concept
+# Assignment 2 
+
+![image](https://user-images.githubusercontent.com/45566396/78024850-5a26d780-7359-11ea-9dd5-6a3c5be17080.png)
 
 Live link: https://sleepy-everglades-16860.herokuapp.com/
 
@@ -266,7 +268,29 @@ It's semantic better to put inputs inside labels with their text. This way they 
 ### Disable images?
 ![image](https://user-images.githubusercontent.com/45566396/78022895-023aa180-7356-11ea-9820-0b3718bf26fd.png)
 
-Gotcha covered. I've given the image a background color as a placeholer, and a height. This way content won't jump if the image hasn't been loaded yet.
+I've given the image a background color as a placeholer, and a height. This way content won't jump if the image hasn't been loaded yet.
+
+### No mouse / trackpad?
+
+I've created focus states for every element that has any interaction. This way users are still able to easily fill in the survey.
+
+### Color blind mode?
+<details>
+    <summary >Click here to check the results that came out of the color test on https://www.checkmycolours.com/# </summary>
+    <img src="https://user-images.githubusercontent.com/45566396/78025344-2bf5c780-735a-11ea-8aa9-4a9921a1d0e4.png">
+
+    Yes, it could be better, but I think it's good enough especially in this given time period.
+</details>
+
+### No Javascript / Local storage and cookies?
+
+The core functionality still works when there's no Javascript enabled because I've built this server side. When Javascript is enabled, there will be extra features like local storage, toggling and copy to clipboard with a notification.
+
+### Internet Throttling?
+![image](https://user-images.githubusercontent.com/45566396/78025902-16cd6880-735b-11ea-9723-61bea8da00fb.png)
+
+
+Fonts still need to be loaded in, but that's not an issue. Because I've given the image a background-color it's clear that the image is still loading. Because of this `skeleton UI` content won't jump elsewhere
 
 ## Assignment 1 - Device & Browser testing
 
