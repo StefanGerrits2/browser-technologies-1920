@@ -17,38 +17,38 @@ The core of this survey is to make sure people can fill in a survey, and can con
 
 ## Flow if you're new to the survey
 <details>
-    <summary >- Start </summary>
+    <summary >Start </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png">
 </details>
 
 <details>
-    <summary >- Receive code for later use </summary>
+    <summary >Receive code for later use </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76961920-8b95b100-691e-11ea-981c-cab41e67a693.png">
 </details>
 
 <details>
-    <summary >- Survey with pagination - page 1 </summary>
+    <summary >Survey with pagination - page 1 </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76961935-918b9200-691e-11ea-84c9-43fca52cd297.png">
 </details>
 
 <details>
-    <summary >- Survey with pagination - pagina 3 </summary>
+    <summary >Survey with pagination - pagina 3 </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76961947-97817300-691e-11ea-91b2-be971de64436.png">
 </details>
 
 ## Flow if you already filled some of it in, and want to keep on going
 <details>
-    <summary >- Start </summary>
+    <summary >Start </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76961895-80428580-691e-11ea-8420-9130c635dfc1.png">
 </details>
 
 <details>
-    <summary >- Type in your code </summary>
+    <summary >Type in your code </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76962045-c0096d00-691e-11ea-9ce4-b09a8b569a5b.png">
 </details>
 
 <details>
-    <summary >- Keep on going where you quit last time </summary>
+    <summary >Keep on going where you quit last time </summary>
     <img src="https://user-images.githubusercontent.com/45566396/76962051-c3045d80-691e-11ea-916e-a2fd2744b9f0.png">
 </details>
 
@@ -64,7 +64,7 @@ This is the basic semantic HTML and server side stuff. In this layer it's import
 #### Usable
 ![image](https://user-images.githubusercontent.com/45566396/78012244-fbeff980-7344-11ea-89fe-765f8dc94f51.png)
 
-In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active). This makes it usuable for everyone. For example if you don't have a mouse or trackpad, you can still easily see the items you're focusing on with tab.
+In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active). This makes it usuable for everyone. For example if you don't have a mouse or trackpad, you can still easily see the items you're focusing on with tab. This layer is also responsive for every device. I've written my HTML and CSS in a way that it always works in every browser, in the next layer there will be enchancements.
 
 #### Pleasurable
 ![image](https://user-images.githubusercontent.com/45566396/78012352-1d50e580-7345-11ea-889e-30d5e707c458.png)
