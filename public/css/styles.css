@@ -214,6 +214,11 @@ a {
     margin-top: 5px;
 }
 
+#legend-house-number {
+    font-weight: normal;
+    padding: 10px 0px 0px 0px;
+}
+
 header a:visited {
     color: white;
 }
@@ -328,10 +333,6 @@ input[type="tel"] {
 
 #house-number {
     width: 50px;
-}
-
-#house-number__container {
-    display: block;
 }
 
 .your-code {
