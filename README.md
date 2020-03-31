@@ -241,6 +241,8 @@ When background size AND background image with linear gradient is supported, ove
 }
 ```
 
+If this isn't supported, the notification won't have keyframes. It will just pop on the screen, and leave after a few seconds.
+
 #### HTML
 
 * Inputmode and patterns
