@@ -209,6 +209,11 @@ a {
     display: inline-block;
 }
 
+.block {
+    display: block;
+    margin-top: 5px;
+}
+
 header a:visited {
     color: white;
 }
@@ -348,7 +353,6 @@ input[type="tel"] {
 .info__container {
     display: none;
     cursor: pointer;
-  
 }
 
 .help {
