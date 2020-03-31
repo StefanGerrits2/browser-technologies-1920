@@ -307,7 +307,7 @@ If you want to view in dev mode, run:
 
 ## Check it out!
 
-* [Click here to open the live link](https://stefangerrits2.github.io/browser-technologies-1920/)
+* [Click here to open the live link](https://sleepy-everglades-16860.herokuapp.com/)
 
 ## License
 
