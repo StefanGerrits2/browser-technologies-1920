@@ -51,6 +51,64 @@ if (isLocalStorageAvailable()) {
     localStorage.setItem('used codes', JSON.stringify(arr));
 }
 
+// COPY FUNCTIONS
+function createCopyElements() {
+    // Select outer container
+    var outerContainer = document.querySelector('#code__container');
+
+    // Create container
+    var button = document.createElement('button');
+    button.id = 'copy-button';
+    button.type = 'button';
+    button.textContent = 'Kopieer je code';
+
+    outerContainer.appendChild(button);
+
+    // Eventlisteners
+    if (document.addEventListener) {
+        // Eventlistener exists
+        button.addEventListener('click', copyToClipBoard);
+        button.addEventListener('keypress', copyToClipBoard);
+    }
+    
+    else if (document.attachEvent) {              
+        // Eventlistener does not exist -> use attachEvent
+        button.attachEvent('onclick', copyToClipBoard);
+        button.attachEvent('keypress', copyToClipBoard);
+    }
+}
+
+function copyToClipBoard() {
+    // Text to copy
+    var textToCopy = document.querySelector('.your-code');
+  
+    // Select the text to copy
+    textToCopy.focus();
+    textToCopy.select();
+    textToCopy.setSelectionRange(0, 99999); // For mobile devices
+  
+    // Copy te text to clipboard
+    document.execCommand('copy');
+
+    var body = document.querySelector('body');
+    var notification = document.createElement('p');
+    notification.id = 'notification';
+    notification.textContent = 'Code gekopieerd!';
+    body.appendChild(notification);
+
+    setTimeout(() => body.removeChild(notification), 5000);
+}
+
+// Check if copy to clipboard works
+function checkCopyToClipBoard() {
+    if (navigator.clipboard && setTimeout) {
+        // Available
+        createCopyElements();
+    }
+}
+
+checkCopyToClipBoard();
+
 // Check if classlists work
 function doesClassListWork() {
     var element = document.querySelector('article');
@@ -65,6 +123,7 @@ function doesClassListWork() {
         return false;
     }
 }
+//
 
 // Source used to check if local storage is available:
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_availability)

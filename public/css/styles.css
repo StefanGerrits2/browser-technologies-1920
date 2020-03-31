@@ -86,7 +86,7 @@ legend {
 label {
     display: inline-block;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 article {
@@ -123,9 +123,27 @@ a {
 .next-button, 
 .back, 
 #start-survey-home, 
-#back-to-home {
+#back-to-home,
+#copy-button {
     border-radius: 5px;
     box-shadow: 0px 3px 6px #00000073;
+}
+
+#copy-button {
+    display: block;
+    margin: 0px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #6B6E70;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+#copy-button:hover,
+#copy-button:focus {
+    background-color: #222629;
 }
 
 .next {
@@ -222,23 +240,46 @@ header a:visited {
 /* FOCUS STATES */
 input[type="text"]:focus, 
 input[type="email"]:focus,
+input[type="tel"]:focus,
 textarea:focus:focus,
 header a:focus,
 .next:focus, 
 .back:focus,
 #start-survey-home:focus,
-#back-to-home:focus {
+#back-to-home:focus,
+#copy-button:focus,
+.info__container:focus {
     outline: 2px solid #0e7c17;
+}
+
+input[type="radio"]:focus:after {
+    content: "";
+    position: absolute;
+    margin-top: -3px;
+    margin-left: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #86C232;
 }
 
 header a:focus {
     background-color: white;
     color: black;
+    text-decoration: underline;
 }
 
 #start-survey-home:focus {
     color: #0e7c17;
     background-color: white;
+}
+
+#copy-button:focus,
+.next:focus, 
+.back:focus,
+#start-survey-home:focus {
+    text-decoration: underline;
 }
 
 .next:focus, .back:focus {
@@ -248,6 +289,7 @@ header a:focus {
 
 input[type="text"]:focus, 
 input[type="email"]:focus, 
+input[type="tel"]:focus, 
 textarea:focus {
     background-color: #e3ffd1;
 }
@@ -255,14 +297,24 @@ textarea:focus {
 /*Input fields */
 input[type="text"], 
 input[type="email"],
+input[type="tel"], 
 textarea {
     border-radius: 5px;
     border: 1px solid #adadad;
 }
 
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"] {
     padding: 5px;
+}
+
+#street-number__container {
+    margin-top: 10px;
 }
 
 #age {
@@ -309,7 +361,7 @@ input[type="email"] {
 .instruction-text, .help-text {
     color: #8f989e;
     font-size: 14px;
-    margin-top: 3px;
+    margin: 7px 0px;
 }
 
 .getCodeForm {
@@ -341,6 +393,31 @@ input[type="email"] {
 #progressbar #step3 {
     width: 66%;
     transition: 500ms;
+}
+
+/* Notification */
+#notification {
+    position: fixed;
+    bottom: 0px;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background-color: #4b7412;
+}
+
+@supports(animation-name: test) {
+    #notification {
+        opacity: 0;
+        animation: notification 5s ease-in-out;
+    }
+}
+
+@keyframes notification {
+    0% {opacity: 0}
+    25% {opacity: 1}
+    75% {opacity: 1}
+    100% {opacity: 0}
 }
 
 /* TOOLTIP */

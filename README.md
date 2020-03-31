@@ -9,6 +9,10 @@ In short:
 
 A survey for elderly people who need home help because they are in quarantine, if they accidentally close the browser or want to continue later, this can be done because I save the input data server side so it will work on every browser even if javascript is disabled.
 
+So are there any problems?
+
+The core of this survey is to make sure people can fill in a survey, and can continue later on where they left earlier. The problem is you can't save input in local storage because not all browser support that, or maybe Javascript is disabled. Because of this I keep track of the data server side. Users get a code they can use later on to continue their survey. 
+
 ## Flow if you're new to the survey
 <details>
     <summary >- Start </summary>
@@ -51,30 +55,43 @@ A survey for elderly people who need home help because they are in quarantine, i
 ### My 3 layers 
 
 #### Functional and reliable
-Screenshot here
+![image](https://user-images.githubusercontent.com/45566396/78012127-d367ff80-7344-11ea-90cc-839c1ea4c083.png)
 
-This is the basic semantic HTML and server side stuff. In this layer it's important that the core functionality works in every browser on every device. I save user input server side because there is no client side javascript in this layer. The core functionality works in every browser on every device. I write the data into json files with a user id to keep track of it. I'm also gonna add some CSS to make it responsive on every device. When you enter a code that exists, it takes you to the page where you quit last time you filled in the survey. I've tested this on my own browsers, devices and even Browserstack. 
+This is the basic semantic HTML and server side stuff. In this layer it's important that the core functionality works in every browser on every device. I save user input server side because there is no client side javascript in this layer. The core functionality works in every browser on every device. I write the data into json files with a user id to keep track of it. When you enter a code that exists, it takes you to the page where you quit last time you filled in the survey, and it remembers the data you've filled in on previous pages. I've tested this on my own browsers, devices and even Browserstack. 
 
 #### Usable
-Add screenshot here
+![image](https://user-images.githubusercontent.com/45566396/78012244-fbeff980-7344-11ea-89fe-765f8dc94f51.png)
 
-In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active).
+In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active). This makes it usuable for everyone. For example if you don't have a mouse or trackpad, you can still easily see the items you're focusing on with tab.
 
 #### Pleasurable
-Add screenshot here
+![image](https://user-images.githubusercontent.com/45566396/78012352-1d50e580-7345-11ea-889e-30d5e707c458.png)
+This is the 'wow' state of my survey. All of the features above work in every modern browser like Firefox, Chrome etc. They all have fallbacks if my survey is visited on an older browser. This means my survey is progressively enhanced.
 
-In the last pleasurable layer, I've added the following features
+In this last layer, I've added the following features
 * CSS animations
+
+Between pages, I've added transitions. This way it feels like you're staying on the same page and it adds a smooth feeling to it.
+
 * CSS gradients
+
+I've added gradients on buttons to make them look more pretty. 
+
 * Javascript client side local storage
 
 With local storage I save used codes people have used. If they forget their code somehow, they can always see which codes they used before on the homepage.
 
 * Javascript client side toggle button
 
-This is the 'wow' state of my survey. All of the features above work in every modern browser like Firefox, Chrome etc. They all have fallbacks if my survey is visited on an older browser. This means my survey is progressively enhanced.
+With Javascript I can toggle text if you click on a button.
+
+* Copy to clipboard button
+
+With Javascript I've added a button that will copy your code to your clipboard.
 
 ### Feature detection
+
+It's important to detect if specific features are available in a browser. This way you can create fallbacks if a browser does not support a specific feature.
 
 * Local storage
 
@@ -153,6 +170,20 @@ Because of this I need to make a fallback with AttachEvent, because this functio
         infoContainer.attachEvent('keypress', toggleInfo);
     }
 ```
+
+* Copy to clipboard
+
+For this specific feature, I need to make sure copy to clipboard and settimeout is available:
+```javascript
+// Check if copy to clipboard works
+function checkCopyToClipBoard() {
+    if (navigator.clipboard && setTimeout) {
+        // Available
+        createCopyElements();
+    }
+}
+```
+
 ### Code examples
 
 #### CSS
@@ -189,7 +220,28 @@ When background size AND background image with linear gradient is supported, ove
 }
 ```
 
+* Keyframes for clipboard notification
+
+```CSS
+/* Supports for a nice fade in transition */
+@supports(animation-name: test) {
+    #notification {
+        opacity: 0;
+        animation: notification 5s ease-in-out;
+    }
+}
+
+@keyframes notification {
+    0% {opacity: 0}
+    25% {opacity: 1}
+    75% {opacity: 1}
+    100% {opacity: 0}
+}
+```
+
 #### HTML
+
+* Inputmode and patterns
 
 From
 
@@ -205,7 +257,11 @@ To
 
 => [Source](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
 
-Adding more over time...
+* Labels as container for inputs
+
+It's semantic better to put inputs inside labels with their text. This way they keep together with their labels more easlily instead of putting a `for` and `id`.
+
+
 
 # Assignment 1 
 

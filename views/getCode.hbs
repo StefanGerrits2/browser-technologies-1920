@@ -5,7 +5,7 @@
     <p>Als u besluit om later verder te werken aan de enquête, onthoud, of schrijf op, de volgende code:</p>
     
     <form class="getCodeForm" action="/questions-1" method="post">
-        <input class="your-code" type="text" name="user" value="{{user}}" readonly>
+        <div id="code__container"><input class="your-code" type="text" name="user" value="{{user}}" ></div>
         <div class="tooltip">
             <div class="info__container" tabindex="0">
                 <img class="info-icon" src="/images/info.svg" alt="info">
@@ -14,7 +14,7 @@
             <span class="tooltiptext">Klik voor extra hulp</span>
         </div>
 
-        <p class="instruction-text">Hint: selecteer de code en druk op ctrl + c om de code te kopiëren, en ctrl + v om deze code ergens te plakken.</p>
+        <p class="instruction-text">Hint: Bewaar je code op een plek waar je later weer bij kan!</p>
 
         <input type="text" name="currentpage" value="getCode" hidden>
 
