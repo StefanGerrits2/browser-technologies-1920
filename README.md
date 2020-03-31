@@ -54,6 +54,8 @@ The core of this survey is to make sure people can fill in a survey, and can con
 
 ### Progressive enhancement
 
+I've built my survey in 3 layers. I did this because the application needs to be progressively enhanced. The first layer is the core function that works in every browser on every device. The application will have more features if the browser can handle this. This will be tested with feature detection. Because of these extra layers my application is progressively enchanced. See below for details per layer.
+
 ### My 3 layers 
 
 #### Functional and reliable
@@ -64,7 +66,7 @@ This is the basic semantic HTML and server side stuff. In this layer it's import
 #### Usable
 ![image](https://user-images.githubusercontent.com/45566396/78012244-fbeff980-7344-11ea-89fe-765f8dc94f51.png)
 
-In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active). This makes it usuable for everyone. For example if you don't have a mouse or trackpad, you can still easily see the items you're focusing on with tab. This layer is also responsive for every device. I've written my HTML and CSS in a way that it always works in every browser, in the next layer there will be enchancements.
+In this layer, CSS is added to make it more usable. This includes fonts, button states (focus hover active). This makes it usuable for everyone. For example if you don't have a mouse or trackpad, you can still easily see the items you're focusing on with tab. This layer is also responsive for every device. I've written my HTML and CSS in a way that it always works in every browser, in the next layer there will be extra enchancements.
 
 #### Pleasurable
 ![image](https://user-images.githubusercontent.com/45566396/78012352-1d50e580-7345-11ea-889e-30d5e707c458.png)
