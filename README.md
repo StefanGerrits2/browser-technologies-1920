@@ -301,14 +301,14 @@ Fonts still need to be loaded in, but that's not an issue. Because I've given th
 #### Browser Technologies
 ##### Researching, testing and implementing
 
-In this course, I learned how to create a website that's accessible by everyone. In this course it was important to check all things you're implementing, for example on caniuse.com and other articles I've read. This means people can visit my survey on every device, on every browser they're using because the goal was to mak the core funtionality work on every browser. I learned how to add enhancements in the website when browsers support certain features such as javascript, local storage and css features. It was important to test my website on multiple browsers because you cannot predict how certain things work on each browser. Because of this, I tested and fixed a lot of issues while testing.
+In this course, I learned how to create a website that's accessible by everyone. In this course it was important to check all things you're implementing, for example on caniuse.com and other articles I've read. This means people can visit my survey on every device, on every browser they're using because the goal was to make the core funtionality work on every browser. I learned how to add enhancements in the website when browsers support certain features such as Javascript, local storage and css features. It was important to test my website on multiple browsers because you cannot predict how certain things work on each browser. Because of this, I tested and fixed a lot of issues while testing.
 
 #### Progressive enhancement
 ##### What is it, and how to implement it
 
 Progressive enhancement means you make sure the core functionality works, and then you add extra features when the browser can handle these features. I've build my website in 3 layers: Functional and reliable, Usable and Pleasurable
 
-The functional and reliable layer means this layer still works when there is no Javascript and CSS. I've learned how to make sure the functional layer works on every browser. I've done this by saving data on the server because there is no Javascript needed to make this work. You get a code which you can fill in later on to continue on the page you quit the survey.
+The functional and reliable layer means this layer still works when there is no Javascript and CSS. I've learned how to make sure the functional layer works on every browser. I've done this by saving data on the server because there is no Javascript needed to make this work. 
 
 The usable layers means this layer is a bit enhanced to improve the user experience. I've done this by adding CSS. This means adding fonts, responsiveness, focus/active states.
 
