@@ -312,7 +312,7 @@ The functional and reliable layer means this layer still works when there is no 
 
 The usable layers means this layer is a bit enhanced to improve the user experience. I've done this by adding CSS. This means adding fonts, responsiveness, focus/active states.
 
-The pleasurable layer means everything is enabled. I learned how to add certain features if the browser supports these. I've implemented local storage to keep track of all used codes, these are shown on the home page. I've made a toggle button with javascript if you need help. I've made a copy to clipboard functionality to instantly copy your code. And I've addes some gradients on buttons.
+The pleasurable layer means everything is enabled. I learned how to add certain features if the browser supports these. I've implemented local storage to keep track of all used codes, these are shown on the home page. I've made a toggle button with javascript if you need help. I've made a copy to clipboard functionality to instantly copy your code. And I've added some gradients on buttons.
 
 #### Feature detection
 ##### How to do this, and what happens if a feature isn't supported
