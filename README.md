@@ -304,22 +304,22 @@ Fonts still need to be loaded in, but that's not an issue. Because I've given th
 In this course, I learned how to create a website that's accessible by everyone. In this course it was important to check all things you're implementing, for example on caniuse.com and other articles I've read. This means people can visit my survey on every device, on every browser they're using because the goal was to make the core funtionality work on every browser. I learned how to add enhancements in the website when browsers support certain features such as Javascript, local storage and css features. It was important to test my website on multiple browsers because you cannot predict how certain things work on each browser. Because of this, I tested and fixed a lot of issues while testing.
 
 #### Progressive enhancement
-##### What is it, and how to implement it
+##### What is it, and how I implemented it
 
-Progressive enhancement means you make sure the core functionality works, and then you add extra features when the browser can handle these features. I've build my website in 3 layers: Functional and reliable, Usable and Pleasurable
+Progressive enhancement means you make sure the core functionality works, and then you add extra features when the browser can handle these features. I've built my website in 3 layers: Functional and reliable, Usable and Pleasurable
 
 The functional and reliable layer means this layer still works when there is no Javascript and CSS. I've learned how to make sure the functional layer works on every browser. I've done this by saving data on the server because there is no Javascript needed to make this work. 
 
 The usable layers means this layer is a bit enhanced to improve the user experience. I've done this by adding CSS. This means adding fonts, responsiveness, focus/active states.
 
-The pleasurable layer means everything is enabled. I learned how to add certain features if the browser supports these. I've implemented local storage to keep track of all used codes, these are shown on the home page. I've made a toggle button with javascript if you need help. I've made a copy to clipboard functionality to instantly copy your code. And I've added some gradients on buttons.
+The pleasurable layer means everything is enabled, this is the 'wow' state. I learned how to add certain features if the browser supported these. I've implemented local storage to keep track of all used codes, these are shown on the home page. I've made a toggle button with javascript if you need help. I've made a copy to clipboard functionality to instantly copy your code. And I've added some gradients on buttons.
 
 #### Feature detection
-##### How to do this, and what happens if a feature isn't supported
+##### How I did this, and what happened if a feature wasn't supported
 
-I've learned how to implement feature detection to make sure my features only show on the website if everything I need is supported to make that feature happen. For example I needed to check if `local storage` was available. When this is available, only then I created the "box" on the homepage where the codes are shown.
+I've learned how to implement feature detection to make sure my features only show on the website if everything I need was supported to make that feature happen. For example I needed to check if `local storage` was available. When this was available, only then I created the "box" on the homepage where the codes are shown.
 
-For the toggle button I needed to check if `classlists` were supported in Javascript because I toggled classes to make this feature work. When this isn't supported, the fallback is that the paragraph of text are shown on the page without a toggle button. This also applies for my copy to clipboard function, when the `setTimeout` and `navigator.clipboard` is available, add a copy to clipboard button, the fallback is that there's no button and you need to copy the code manually.
+For the toggle button I needed to check if `classlists` were supported in Javascript because I toggled classes to make this feature work. When this isn't supported, the fallback is that the paragraph of text are shown on the page without a toggle button. This also applied for my copy to clipboard function, when `setTimeout` and `navigator.clipboard` were available, I added a copy to clipboard button, the fallback was that there's no button and you needed to copy the code manually.
 
 I've learned how to use the `@supports` in CSS. I checked if a `background-image linear-gradient` was supported. If it worked? great! If not, I've simply added a normal background color as fallback.
 
